@@ -1,70 +1,41 @@
 <template>
   <div class="index">
-  	<header>
-	  	<el-row :gutter="0">
-	  		<el-col :span="4">
-	  		    <img src="/static/image/index/public/headerKefuB.png" alt="">
-	  		</el-col>
-	  		<el-col :span="16">
-	  		    <input type="search" placeholder="输入关键字搜索作品">
-	  		</el-col>
-	  		<el-col :span="4">
-	  		    <img src="/static/image/index/public/znx.png" alt="">
-	  		</el-col>
-	  	</el-row>
-		<el-row :gutter="0">
-		    <el-col :span="6">
-		        <el-link href="" target="_blank">推荐</el-link>
-		    </el-col>
-		    <el-col :span="6">
-		    	<el-link href="" target="_blank">入门收藏</el-link>
-		    </el-col>
-		    <el-col :span="6">
-		    	<el-link href="" target="_blank">潜力收藏</el-link>
-		    </el-col>
-		    <el-col :span="6">
-		    	<el-link href="" target="_blank">名作收藏</el-link>
-		    </el-col>
-		</el-row>
-  	</header>
-
   	<section>
-  		
+  		<router-view/>
   	</section>
 
   	<footer>
-  		<!-- <div class="box">
+  		<div class="box">
   			<router-link to="/ind">
   				<img src="/static/image/index/public/index.png" alt=""><br>
   				首页
   			</router-link>
   		</div>
   		<div class="box">
-  			<router-link to="">
+  			<router-link to="/kinds">
   				<img src="/static/image/index/public/fl.png" alt=""><br>
 	  			分类
   			</router-link>
   		</div>
   		<div class="box">
-  			<router-link to="">
+  			<router-link to="/arts">
 	  			<img src="/static/image/index/public/ys.png" alt=""><br>
 	  			艺术家	
   			</router-link>
   		</div>
   		<div class="box">
-  			<router-link to="">
+  			<router-link to="/car">
 	  			<img src="/static/image/index/public/car.png" alt=""><br>
 	  			购物车
   			</router-link>
   		</div>
   		<div class="box">
-  			<router-link to="">
+  			<router-link to="/me">
 	  			<img src="/static/image/index/public/me.png" alt=""><br>
 	  			我	
   			</router-link>
-  		</div> -->
+  		</div>
   	</footer>
-  	<router-view/>
   </div>
 </template>
 
