@@ -45,43 +45,27 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="less">
 .index{
 	width: 500px;
 	height: 100%;
-}
-header{
-	background-color: black;
-	opacity: .4;
-}
-input{
-	width: 80%;
-	height: 40px;
-	margin:8px auto;
-}
-span{
-	font-size: 20px;
-	color:#fff;
-	line-height: 50px;
-}
-span::actived{
-	text-decoration: underline;
+	overflow:hidden;
 }
 footer{
 	display: flex;
 }
 .box{
 	width: 20%;
-}
-.box img{
-	width: 35px;
-}
-.box a{
-	font-size: 12px;
-	color:black;
-	text-decoration: none;
-}
-.box a::actived{
-	font-weight: bold;
-}
+	img{
+		width: 35px;
+	}
+	a{
+		font-size: 12px;
+		color:black;
+		text-decoration: none;
+	}
+	a::actived{
+		font-weight: bold;
+	}
+} 
 </style>
