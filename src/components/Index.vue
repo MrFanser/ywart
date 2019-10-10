@@ -6,7 +6,7 @@
 
   	<footer>
   		<div class="box">
-  			<router-link to="/ind">
+  			<router-link to="/header">
   				<img src="/static/image/index/public/index.png" alt=""><br>
   				首页
   			</router-link>
@@ -53,6 +53,12 @@ export default {
 }
 footer{
 	display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 500px;
+  text-align: center;
+  background-color: #fff;
+  z-index: 1000000;
 }
 .box{
 	width: 20%;

@@ -2,47 +2,105 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/Index'
 import Ind from '@/components/ind'
+import Rudi from '@/components/index/rudi'
+import Latent from '@/components/index/latent'
+import Recoment from '@/components/index/recoment'
+import Header from '@/components/index/header'
 import Kinds from '@/components/kinds'
 import Arts from '@/components/arts'
 import Car from '@/components/car'
 import Me from '@/components/me'
+import Gkj from '@/components/index/gkj'
+import Fall from '@/components/index/fall'
+import Princess from '@/components/index/princess'
+import Phil from '@/components/phil'
+import Art from '@/components/index/art'
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
+    routes: [
+    	{
+      	path: '/',
+     	name: 'Index',
+     	component: Index,
+     	children:[
+     		{
+     		 	path:'/header',
+     		 	name:'Header',
+     		 	component:Header,
+     		 	children:[
+     		 		{
+     		 			path:'/ind',
+     		 			name:'Ind',
+     		 			component:Ind
+     		 		},
+     		 		{
+     		 			path:'/index/recoment',
+     		 			name:'Recoment',
+     		 			component:Recoment,
+     		 		},
+     		 		{
+     		 			path:'/index/rudi',
+     		 			name:'Rudi',
+     		 			component:Rudi
+     		 		},
+     		 		{
+     		 			path:'/index/latent',
+     		 			name:'Latent',
+     		 			component:Latent
+     		 		},
+     		 	],
+     		 	redirect:'/ind'
+     		},
+     		{
+     		 	path:'/kinds',
+     		 	name:'Kinds',
+     		 	component:Kinds
+     		},
+     		{
+     		 	path:'/arts',
+     		 	name:'Arts',
+     		 	component:Arts
+     		},
+     		{
+     		 	path:'/car',
+     		 	name:'Car',
+     		 	component:Car
+     		},
+     		{
+     		 	path:'/me',
+     		 	name:'Me',
+     		 	component:Me
+     		},
+        ],
+      	redirect:'/header'
+    },
+    
     {
-      path: '/',
-      name: 'Index',
-      component: Index,
-      children:[
-      	{
-      		path:'ind',
-      		name:'Ind',
-      		component:Ind
-      	},
-      	{
-      		path:'kinds',
-      		name:'Kinds',
-      		component:Kinds
-      	},
-      	{
-      		path:'arts',
-      		name:'Arts',
-      		component:Arts
-      	},
-      	{
-      		path:'car',
-      		name:'Car',
-      		component:Car
-      	},
-      	{
-      		path:'me',
-      		name:'Me',
-      		component:Me
-      	}
-      ],
-      redirect:'/ind'
+    	path:'/index/gkj',
+    	name:'Gkj',
+    	component:Gkj
+    },
+    {
+    	path:'/index/fall',
+    	name:'Fall',
+    	component:Fall
+    },
+    {
+    	path:'/index/princess',
+    	name:'Princess',
+    	component:Princess
+    },
+    {
+    	path:'/phil',
+    	name:'Phil',
+    	component:Phil
+    },
+    {
+    	path:'/index/art',
+    	name:'Art',
+    	component:Art
     }
   ]
 })
