@@ -122,6 +122,7 @@ h3{
 	}
 }
 .lt{
+	transition: all 1s;
 	width:250px;
 	height: 30px;
 	line-height: 30px;

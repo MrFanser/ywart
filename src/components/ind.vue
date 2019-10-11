@@ -29,7 +29,7 @@
 	  			<h4>AITE ONLINE艺术博览会</h4>
 		  		<span class="">为艺术爱好者传到艺术的新变革与新理念</span>	
   			</div>
-	  		<router-link to="">
+	  		<router-link to="/index/art">
 	  			<img src="/static/image/index/recommend/6.jpg" alt="">
 	  		</router-link>
   		</div>

@@ -74,12 +74,11 @@ export default {
 header{
   position: fixed;
   width:500px;
-  top:0;
+  top:0px;
   text-align: center;
   z-index: 10000;
   .search{
     opacity: 0.8;
-    margin-top: 8px;
     background-color: black;
     height: 50px;
   }
@@ -90,9 +89,7 @@ header{
   input{
     width: 80%;
     height: 40px;
-    margin:8px auto;
-  }
-  .router-link-active{
+    margin: 8px auto;
   }
   .visi{
     background-color: #fff;
@@ -104,6 +101,9 @@ header{
       color:#333;
       text-decoration: none;
       font-size: 15px;
+    }
+    .router-link-active{
+      border-bottom: 2px solid #333;
     }
   }
   .collect{

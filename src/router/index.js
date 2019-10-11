@@ -15,6 +15,7 @@ import Fall from '@/components/index/fall'
 import Princess from '@/components/index/princess'
 import Phil from '@/components/phil'
 import Art from '@/components/index/art'
+import Setting from '@/components/index/setting'
 
 Vue.use(Router)
 
@@ -75,32 +76,37 @@ export default new Router({
      		},
         ],
       	redirect:'/header'
-    },
-    
+	    },
+	    
+	    {
+	    	path:'/index/gkj',
+	    	name:'Gkj',
+	    	component:Gkj
+	    },
+	    {
+	    	path:'/index/fall',
+	    	name:'Fall',
+	    	component:Fall
+	    },
+	    {
+	    	path:'/index/princess',
+	    	name:'Princess',
+	    	component:Princess
+	    },
+	    {
+	    	path:'/phil',
+	    	name:'Phil',
+	    	component:Phil
+	    },
+	    {
+	    	path:'/index/art',
+	    	name:'Art',
+	    	component:Art
+    	},
     {
-    	path:'/index/gkj',
-    	name:'Gkj',
-    	component:Gkj
-    },
-    {
-    	path:'/index/fall',
-    	name:'Fall',
-    	component:Fall
-    },
-    {
-    	path:'/index/princess',
-    	name:'Princess',
-    	component:Princess
-    },
-    {
-    	path:'/phil',
-    	name:'Phil',
-    	component:Phil
-    },
-    {
-    	path:'/index/art',
-    	name:'Art',
-    	component:Art
+    	path:'/index/setting',
+    	name:'Setting',
+    	component:Setting
     }
   ]
 })

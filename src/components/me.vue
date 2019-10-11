@@ -2,7 +2,7 @@
   <div class="MeWorld">
   	<header>
   		<span class="UserName"><img src="../../static/image/index/public/cars.png" alt=""> <b>123</b></span>
-  		<span><img src="../../static/image/index/public/car.png" alt=""></span>
+  		<span><router-link to="/index/setting"><img src="../../static/image/index/public/car.png" alt=""></router-link></span>
   	</header>
   	<section class="VIPCard">
   		<div class="card">
@@ -48,6 +48,7 @@
   			<span class="hid"><img src="../../static/image/index/public/cars.png" alt=""><br><span></span></span>
   		</div>
   	</div>
+  	<router-view/>
   </div>
 </template>
 
