@@ -4,7 +4,7 @@
           <div v-bind:class="isShow?hidden:search" class="slide">
             <el-row :gutter="0">
               <el-col :span="4">
-                  <img src="/static/image/index/public/headerKefuB.png" alt="">
+                  <img src="/static/image/index/public/headerKefu.png" alt="">
               </el-col>
               <el-col :span="16">
                   <input type="search" placeholder="输入关键字搜索作品">

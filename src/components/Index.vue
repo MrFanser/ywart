@@ -46,6 +46,12 @@ export default {
 </script>
 
 <style scoped lang="less">
+*{
+  width: 500px;
+  margin: 0;
+  padding:0;
+  background-color: #eee;
+}
 .index{
 	width: 500px;
 	height: 100%;

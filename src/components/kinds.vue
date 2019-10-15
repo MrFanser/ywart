@@ -5,7 +5,7 @@
 	  	</header>
 	  	<div class="tagp">
 		  	<p class="tag">
-		  		<span>分类 | </span>
+		  		<span v-on:click="bgc">分类 | </span>
 		  		<span>油画</span>
 		  		<span>版画</span>
 		  		<span>水墨</span>
@@ -39,7 +39,7 @@
 		  		<span>最新上架</span>
 		  		<span>热度排序</span>
 		  		<span>价格排序</span>
-		  		<span class="headTagOther">筛选<img src="/static/image/index/public/ys.png" alt=""></span>
+		  		<span class="headTagOther">筛选<img src="/static/image/index/public/sxct.png" alt=""></span>
 		  	</p>	
 	  	</div>
 	  		<div class="pb">
@@ -64,7 +64,7 @@ export default {
 		handleScroll(){
 			let canShow;
 			let scrollTop = window.pageYOffset;
-			console.log(scrollTop);
+			// console.log(scrollTop);
 			
 			if(scrollTop-122>0){
 				this.canShow=true;
@@ -105,7 +105,7 @@ export default {
 }
 	.pb{
 		overflow:auto;
-		margin-top: 20px;
+		margin-top: 50px;
 		height: 2100px;
 	}
 	header{
@@ -136,7 +136,7 @@ export default {
 	}
 	.tagp{
 		position: relative;
-		top: 20px;
+		top: 40px;
 	}
 	.tag{
 		white-space: nowrap;

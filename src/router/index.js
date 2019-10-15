@@ -16,6 +16,17 @@ import Princess from '@/components/index/princess'
 import Phil from '@/components/phil'
 import Art from '@/components/index/art'
 import Setting from '@/components/index/setting'
+import Menu from '@/components/index/menu'
+import Gallery from '@/components/index/gallery'
+import Suggest from '@/components/index/suggest'
+import Dress from '@/components/index/dress'
+import Shop from '@/components/index/shop'
+import Cezhan from '@/components/index/cezhan'
+import Public from '@/components/index/public'
+import Shede from '@/components/index/shede'
+import About from '@/components/index/about'
+import Shopping from '@/components/index/shopping'
+import Voide from '@/components/index/voide'
 
 Vue.use(Router)
 
@@ -99,14 +110,72 @@ export default new Router({
 	    	component:Phil
 	    },
 	    {
-	    	path:'/index/art',
-	    	name:'Art',
-	    	component:Art
-    	},
+	    	path:'/index/menu',
+	    	name:'Menu',
+	    	component:Menu,
+	    	children:[
+		    	{
+		    		path:'/index/art',
+		    		name:'Art',
+		    		component:Art
+		    	},
+		    	{
+		    		path:'/index/gallery',
+		    		name:'Gallery',
+		    		component:Gallery
+		    	},
+		    	{
+		    		path:'/index/cezhan',
+		    		name:'Cezhan',
+		    		component:Cezhan
+		    	},
+		    	{
+		    		path:'/index/public',
+		    		name:'Public',
+		    		component:Public
+		    	},
+		    	{
+		    		path:'/index/shede',
+		    		name:'Shede',
+		    		component:Shede
+		    	},
+		    	{
+		    		path:'/index/about',
+		    		name:'About',
+		    		component:About
+		    	}
+	    	],
+	    	redirect:'/index/art'
+	    },
     {
     	path:'/index/setting',
     	name:'Setting',
     	component:Setting
+    },
+    {
+    	path:'/index/suggest',
+    	name:'Suggest',
+    	component:Suggest
+    },
+    {
+    	path:'/index/dress',
+    	name:'Dress',
+    	component:Dress
+    },
+    {
+    	path:'/index/shop',
+    	name:'Shop',
+    	component:Shop
+    },
+    {
+    	path:'/index/shopping',
+    	name:'Shopping',
+    	component:Shopping
+    },
+	{
+		path:'/index/voide',
+    	name:'Voide',
+		component:Voide
     }
   ]
 })

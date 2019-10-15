@@ -34,16 +34,16 @@
 	  		</router-link>
   		</div>
   		<div class="ecpa">
-  			<router-link to="">
+  			<router-link to="/index/gallery">
   				<img src="/static/image/index/recommend/lt.jpg" alt="">
   			</router-link>
-  			<router-link to="">
+  			<router-link to="/index/cezhan">
   				<img src="/static/image/index/recommend/rt.jpg" alt="">
   			</router-link>
-  			<router-link to="">
+  			<router-link to="/index/public">
   				<img src="/static/image/index/recommend/ld.jpg" alt="">
   			</router-link>
-  			<router-link to="">
+  			<router-link to="/index/shede">
   				<img src="/static/image/index/recommend/rd.jpg" alt="">
   			</router-link>
   		</div>
@@ -53,7 +53,7 @@
   		</div>
   		<nav>
 	  		<div class="imgs" v-for="(n,i) in goods" :key="i">
-	  			<img :src="n.url" alt=""><br>
+	  			<router-link to="/index/shopping"><img :src="n.url" alt=""><br></router-link>
 	  			<span>&yen;{{n.price}}</span><br>
 	  			<span>{{n.induce}}</span>
 	  		</div>	
@@ -144,7 +144,7 @@ export default {
 	  		item:[
 	  			{
 	  				url:'/static/image/index/recommend/1.jpg',
-	  				path:'index/art'
+	  				path:'index/menu'
 	  			},
 	  			{
 	  				url:'/static/image/index/recommend/2.jpg',
@@ -194,6 +194,9 @@ export default {
 *{
 	margin:0;
 	padding: 0;
+}
+.ind{
+	margin-bottom:100px;
 }
 .el-carousel__item img{
 	width: 100%;

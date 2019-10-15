@@ -1,28 +1,57 @@
 <template>
  	<div class="art">
-  		<header>
-	        <div class="slide">
-	            <el-row :gutter="0">
-	              	<el-col :span="4">
-	                 	<img src="/static/image/index/latent/art/neum.png" alt="">
-	              	</el-col>
-	              	<el-col :span="16">
-	                  	<span class="aite"><b>AITE ONLINE艺术博览会</b></span>
-	              	</el-col>
-	              	<el-col :span="4">
-	                  	<el-dropdown>
-	                  	  <span class="el-dropdown-link"><img src="/static/image/index/latent/art/gui.jpg" alt="" class="two">
-	                  	  </span>
-	                  	  <el-dropdown-menu slot="dropdown" trigger="click">
-	                  	    <router-link to=""><el-dropdown-item>个人中心</el-dropdown-item></router-link>
-	                  	    <router-link to=""><el-dropdown-item>我的订单</el-dropdown-item></router-link>
-	                  	    <router-link to=""><el-dropdown-item>退出登录</el-dropdown-item></router-link>
-	                  	  </el-dropdown-menu>
-	                  	</el-dropdown>
-	              	</el-col>
-	            </el-row> 
-	        </div>
-        </header>
+ 		<header>
+  		        <div class="slide">
+  		            <el-row :gutter="0">
+  		              	<el-col :span="4">
+  		              		<el-radio-group v-model="direction">
+  		              		  <el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
+  		              		    <img src="/static/image/index/latent/art/neum.png" alt="">
+  		              		  </el-button>
+  		              		</el-radio-group>
+  		              		<div>
+  			              		<el-drawer
+  			              		  :visible.sync="drawer"
+  			              		  :direction="direction">
+  			              		  <div @click="drawer = false"><router-link to="/index/art">首页</router-link></div>
+  			              		  <div class="jump">
+  			              		  	<el-button type="text" @click="dialogVisible = true">全部作品</el-button>
+  			              		  	<el-dialog
+  			              		  	  title="购票即看艺博会全部作品"
+  			              		  	  :visible.sync="dialogVisible"
+  			              		  	  width="350px">
+  			              		  	  <p>一次购票，不限次看展</p>
+  			              		  	  <p>免费获赠30天艺网VIP会员</p>
+  			              		  	  <span slot="footer" class="">
+  			              		  	    <el-button type="primary" @click="dialogVisible = false">立即购票</el-button>
+  			              		  	  </span>
+  			              		  	</el-dialog>
+  			              		  </div>
+  			              		  <div v-for="(m,n) in itemm" @click="pay(m.name)">
+	  			              		  <div @click="drawer = false">
+	  			              		  	<router-link :to="m.path">{{m.name}}</router-link>
+	  			              		  </div>
+	  			              	  </div>
+  			              		</el-drawer>	
+  		              		</div>
+  		              	</el-col>
+  		              	<el-col :span="16">
+  		                  	<span class="aite"><b>AITE ONLINE艺博会</b></span>
+  		              	</el-col>
+  		              	<el-col :span="4">
+  		                  	<el-dropdown>
+  		                  	  <span class="el-dropdown-link"><img src="/static/image/index/latent/art/gui.jpg" alt="" class="two">
+  		                  	  </span>
+  		                  	  <el-dropdown-menu slot="dropdown" trigger="click">
+  		                  	    <router-link to=""><el-dropdown-item>个人中心</el-dropdown-item></router-link>
+  		                  	    <router-link to=""><el-dropdown-item>我的订单</el-dropdown-item></router-link>
+  		                  	    <router-link to=""><el-dropdown-item>退出登录</el-dropdown-item></router-link>
+  		                  	  </el-dropdown-menu>
+  		                  	</el-dropdown>
+  		              	</el-col>
+  		            </el-row> 
+  		        </div>
+  	        </header>
 		<div class="lun">
 			<el-carousel height="500px">
 			    <el-carousel-item v-for="i in item">
@@ -124,14 +153,6 @@
 					</div>
 			    </div>
 			    <img src="/static/image/index/latent/art/all.png" alt="">
-				<div class="pay">购买展览通票</div>
-				<div class="footer">
-					<span><h3>联系我们</h3>CONTACT US</span>
-					<p>Tel : 400-605-7033</p>
-					<p>E-mail : ywart@ywart.com</p>
-					<hr color="#e4ab10">
-					<span>CopyRight © 艺网科技YWART.COM 2015 - 2019</span>
-				</div>
 			</div>
 		</div>
   	</div>
@@ -142,6 +163,35 @@ export default {
   		return{
   			activeName2: 'first',
   			activeName3: '1',
+  			direction: 'ttb',
+  			drawer: false,
+    		dialogVisible: false,
+  			itemm:[
+    			{
+    				name:'参展机构',
+    				path:'/index/gallery'
+    			},
+    			{
+    				name:'策展单元',
+    				path:'/index/cezhan'
+    			},
+    			{
+    				name:'公共项目',
+    				path:'/index/public'
+    			},
+    			{
+    				name:'艺术舍得',
+    				path:'/index/shede'
+    			},
+    			{
+    				name:'关于AITE ONLINE艺博会',
+    				path:'/index/about'
+    			},
+    			{
+    				name:'购买展览通票',
+    				path:'/index/gallery'
+    			},
+    		],
   			item:[
   				{
   					url:'/static/image/index/latent/art/1.jpg',
@@ -393,15 +443,17 @@ export default {
   		}
   	},
   	methods: {
-  	    handleClick(tab, event) {
-  	       console.log(tab, event);
-  	    }
+  		handleClick(tab, event) {
+        console.log(tab, event);
+  	    },
+  	    pay(n){
+    		this.tit = n
+    	}
   	}
 }
 </script>
 <style scroped lang="less">
 .art{
-	width: 500px;
 	p{
 		text-align: center;
 	}
@@ -412,17 +464,7 @@ export default {
 		padding-top: 30px;
 		font-size: 25px;
 	}
-	header{
-		width: 500px;
-		height: 50px;
-		z-index: 10;
-		background-color: #fec400;
-		position: fixed;
-		top:0;
-	}
 	.slide{
-		position: relative;
-		text-align: center;
 		a{
 			line-height: 50px;
 			text-decoration: none;
@@ -430,16 +472,12 @@ export default {
 			color:#333;
 			background-color: #eeeeee;
 		}
-		img{
-			height: 30px;
-			margin-top: 10px;
+		.jump{
+			text-align: center;
+			position: relative;
 		}
-		.aite{
-			display: block;
-			padding-top: 15px;
-		}
-		.two{
-			border-radius: 50%;
+		header{
+			width: 500px;
 		}
 	}
 	.slidefore{
@@ -491,16 +529,6 @@ export default {
 	}
 	.btnwhite{
 		background-color: #fff;
-	}
-	.pay{
-		width:100px;
-		padding: 10px;
-		border-radius: 5px;
-		background-color: #fec400;
-		position: relative;
-		bottom:100px;
-		left: 180px;
-		display: none;
 	}
 	.lun{
 		img{
@@ -572,28 +600,6 @@ export default {
 				font-size: 12px;
 				background-color: #fff;
 				padding-bottom: 30px;
-			}
-		}
-		.footer{
-			background-color: #fec400;
-			padding:30px 0 0 30px ;
-			h3{
-				display: inline-block;
-			}
-			p{
-				text-align: left;
-			}
-			hr{
-				width: 500px;
-				position: relative;
-				left: -32px;
-			}
-			span{
-				line-height: 50px;
-				text-align: center;
-			}
-			span:first-child{
-				font-size: 20px;
 			}
 		}
 		.slideflex{
