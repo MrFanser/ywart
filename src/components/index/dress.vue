@@ -1,26 +1,26 @@
 <template>
-  <div class="local">
-  	<header>
-  		<span><router-link to="/me">&lt;</router-link></span>
-  		<span>收货地址</span>
-  		<span class="hid">&gt;</span>
-  	</header>
-  	<div class="OwnMsg">
-  		<span>收件人</span><input type="text" placeholder="请输入姓名">
+  	<div class="local">
+	  	<header>
+	  		<span @click="goback">&lt;</span>
+	  		<span>收货地址</span>
+	  		<span class="hid">&gt;</span>
+	  	</header>
+	  	<div class="OwnMsg">
+	  		<span>收件人</span><input type="text" placeholder="请输入姓名">
+	  	</div>
+	  	<div class="OwnMsg">
+	  		<span>手机</span><input type="text" placeholder="请输入手机号码">
+	  	</div>
+	  	<div class="ChosseLocal">
+	  		<span></span>
+	  		<span></span>
+	  		<span></span>
+	  	</div>
+	  	<textarea cols="30" rows="10" placeholder="填写收货地址"></textarea>
+	  	<footer>
+	  		<input type="button" value="保存">
+	  	</footer>
   	</div>
-  	<div class="OwnMsg">
-  		<span>手机</span><input type="text" placeholder="请输入手机号码">
-  	</div>
-  	<div class="ChosseLocal">
-  		<span></span>
-  		<span></span>
-  		<span></span>
-  	</div>
-  	<textarea cols="30" rows="10" placeholder="填写收货地址"></textarea>
-  	<footer>
-  		<input type="button" value="保存">
-  	</footer>
-  </div>
 </template>
 
 <script>
@@ -31,7 +31,12 @@ export default {
   		local:[],
   		area:[]
   	}
-  }
+  },
+  	methods:{
+  		goback(){
+  			history.back()
+  		}
+  	}
 }
 </script>
 <style scoped>
@@ -41,6 +46,9 @@ export default {
 	}
 	.hid{
 		visibility: hidden;
+	}
+	textarea{
+		resize:none;
 	}
 	.local{
 		width: 500px;

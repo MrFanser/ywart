@@ -32,7 +32,7 @@
 	  	  	</div>  			  	
 	  	</div>
 	  	<div class="pb">
-	  		<vue-waterfall-easy :imgsArr="imgsArr"></vue-waterfall-easy>
+	  		<vue-waterfall-easy :imgsArr="imgsArr"><span><b>&yen;1.172</b></span><br><span>泛太克美术志，动与静</span></vue-waterfall-easy>
 	  	</div>
     </div>
 </template>
@@ -112,7 +112,7 @@ export default {
 	padding: 0;
 }
 .pb{
-	height: 2100px;
+	height: 2400px;
 	width: 500px;
 }
 .rudi{

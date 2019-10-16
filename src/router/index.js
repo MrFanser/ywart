@@ -29,6 +29,16 @@ import Shopping from '@/components/index/shopping'
 import Voide from '@/components/index/voide'
 
 Vue.use(Router)
+const router = new Router({
+    //在此处加入以下内容
+    scrollBehavior(to,from,saveTop){
+	    if(saveTop){
+	        return saveTop;
+	    }else{
+	        return {x:0,y:0}
+	    }
+    },
+})
 
 export default new Router({
     routes: [

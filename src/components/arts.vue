@@ -1,38 +1,49 @@
 <template>
-  <div class="arts">
-  	<div class="head"><img src="/static/image/index/public/ss.png" alt=""><input type="text" placeholder="搜索艺术家"></div>
-  	<div class="star">
-  		<p>艺网之星</p>
-  		<img src="/static/image/art/1.jpg" alt=""><br>
-  		<span><b>宿哲：</b>青春时代</span><br>
-  		<span>宿哲的作品采用的是写实主义手法，但表现出来的气质却不是传统写实作品可以等同的，他的作品似乎也预示了写实绘画的崭新前景。</span>
+  	<div class="arts">
+	  	<div class="head"><img src="/static/image/index/public/ss.png" alt=""><input type="text" placeholder="搜索艺术家"></div>
+	  	<div class="star">
+	  		<p>艺网之星</p>
+	  		<img src="/static/image/art/1.jpg" alt=""><br>
+	  		<span><b>宿哲：</b>青春时代</span><br>
+	  		<span>宿哲的作品采用的是写实主义手法，但表现出来的气质却不是传统写实作品可以等同的，他的作品似乎也预示了写实绘画的崭新前景。</span>
+	  	</div>
+	  	<div class="artactive">
+	  		<p>艺术家动态</p>
+			<div class="langactive">
+				<div>
+					<div v-for="(pic,o) in actived" :key="o">
+						<img :src="pic.url" alt="">
+						<span>{{pic.activeh3}}</span>
+					</div>
+				</div>
+			</div>
+	  	</div>
+	  		<p>往期艺网之星</p>
+	  	<div class="human" v-for="(item,i) in imgs" :key="i">
+	  		<img :src="item.path" alt="">
+	  		<div class="ind">
+		  		<span>{{item.name}}</span><br>
+		  		<span>{{item.introduce}}</span>	
+	  		</div>
+	  		<div class="lang">
+	  			<div>
+	  				<div v-for="(pic,j) in imgs[i].img" :key="j">
+	  					<img :src="pic.url" alt="">
+	  					<span>{{pic.price}}</span><br>
+	  					<span>{{pic.tit}}</span>
+	  				</div>
+	  			</div>
+	  		</div>
+	  	</div>
+	  	<div class="artsearch">
+	  		<p>艺术家索引</p>
+	  		<div class="search">
+	  			<div><b>A</b><b>B</b><b>C</b><b>D</b><b>E</b><b>F</b><b>G</b><b>H</b><b>I</b><b>J</b></div>
+	  			<div><b>K</b><b>L</b><b>M</b><b>N</b><b>O</b><b>P</b><b>Q</b><b>R</b><b>S</b><b>T</b></div>
+	  			<div><b>U</b><b>V</b><b>W</b><b>X</b><b>Y</b><b>Z</b><b>#</b></div>
+	  		</div>
+	  	</div>
   	</div>
-  	<div class="artactive">
-  		<p>艺术家动态</p>
-
-  	</div>
-  		<p>往期艺网之星</p>
-  	<div class="human" v-for="(item,i) in imgs" :key="i">
-  		<img :src="item.path" alt="">
-  		<div class="ind">
-	  		<span>{{item.name}}</span><br>
-	  		<span>{{item.introduce}}</span>	
-  		</div>
-  		<div class="lang">
-  			<div>
-  				<div v-for="(pic,j) in imgs[i].img" :key="j">
-  					<img :src="pic.url" alt="">
-  					<span>{{pic.price}}</span><br>
-  					<span>{{pic.tit}}</span>
-  				</div>
-  			</div>
-  		</div>
-  	</div>
-  	<div class="artsearch">
-  		<p>艺术家索引</p>
-  		
-  	</div>
-  </div>
 </template>
 
 <script>
@@ -247,7 +258,29 @@ export default {
   							tit:'幻世'
   						}
   					]
+  				}
+  			],
+  			actived:[
+  				{
+  					url:'/static/image/art/3.jpg',
+  					activeh3:'由“轻装修，重装饰”引发的家装行业“从艺”思考'
   				},
+  				{
+  					url:'/static/image/art/4.jpg',
+  					activeh3:'艺网微个展 宿哲 | 保持自省，赋予时代意义'
+  				},
+  				{
+  					url:'/static/image/art/4.jpg',
+  					activeh3:'艺网微个展 陈尚昌 | 触动灵魂的感悟及思考'
+  				},
+  				{
+  					url:'/static/image/art/5.jpg',
+  					activeh3:'艺 网 微 个 展 黄 运 长 | 万物与我合而为一'
+  				},
+  				{
+  					url:'/static/image/art/6.jpg',
+  					activeh3:'艺网微个展 李少白 | 神秘的紫禁城，看不见的故宫'
+  				}
   			]
   		}
   	}
@@ -291,18 +324,35 @@ export default {
 		}
 	}
 	.lang{
-		width: 450px;
-		height: 200px;
+		width: 480px;
+		height: 250px;
 		overflow-x:auto;
 		&>div{
 			width:1550px; 
 			div{
 				display: inline-block;
 				width:150px;
-				margin:  0 10px;
+				height: 220px;
 				text-align: right;
+				margin:  0 10px;
 				img{
 					width: 150px;
+				}
+			}
+		}
+	}
+	.langactive{
+		width: 480px;
+		height:300px;
+		overflow-x:auto;
+		&>div{
+			width:1600px;
+			div{
+				display: inline-block;
+				width:300px;
+				margin:  0 10px;
+				img{
+					width: 300px;
 				}
 			}
 		}
@@ -316,6 +366,18 @@ export default {
 			position: absolute;
 			top:0;
 			left:70px;
+		}
+	}
+	.search{
+		width: 480px;
+		div{
+			display: flex;
+			margin-left:20px;
+			b{
+				display: block;
+				width: 10%;
+				margin:10px 0;
+			}
 		}
 	}
 }

@@ -2,9 +2,9 @@
   	<div class="shopping">
 		<div class="header">
 			<el-row>
-			  <el-col :span="4"><div class="grid-content bg-purple-dark"><img src="/static/image/index/public/back.png" alt="" @click="goback"></div></el-col>
-			  <el-col :span="16"><div class="grid-content bg-purple-dark"><h2>加冕</h2></div></el-col>
-			  <el-col :span="4"><div class="grid-content bg-purple-dark"><img src="/static/image/index/public/kefu.png" alt=""></div></el-col>
+			  	<el-col :span="4"><div class="grid-content bg-purple-dark"><img src="/static/image/index/public/back.png" alt="" @click="goback"></div></el-col>
+			  	<el-col :span="16"><div class="grid-content bg-purple-dark"><h2>加冕</h2></div></el-col>
+			  	<el-col :span="4"><div class="grid-content bg-purple-dark"><img src="/static/image/index/public/kefu.png" alt=""></div></el-col>
 			</el-row>
 		</div>
 		<section>
@@ -12,8 +12,8 @@
 				<img src="/static/image/index/latent/guan/guan1.jpg" alt="">
 			</div>
 			<div class="induce">
-				<span>加冕</span><br>
-				<span>￥46.800</span><br>
+				<span>{{proMsg.proName}}</span><br>
+				<span>&yen;{{proMsg.price}}</span><br>
 				<span>布面丙烯，150.0&times;150.0</span>	
 			</div>
 			<div class="coast">
@@ -116,6 +116,7 @@
 export default {
   	data(){
   		return{
+  			proMsg:this.$route.params.dataObj,
   			picture:[
   				{
   					url:'/static/image/index/latent/guan/1.jpg',
@@ -163,21 +164,37 @@ export default {
   					id:'jiamian',
   					name:'加冕',
   					url:'/static/image/index/latent/guan/guan1.jpg',
-  					author:'王加诺'
+  					author:'王加诺',
+  					price:'12.230'
   				}
   			]
   		}
+  	},
+  	created(){
+  		console.log(document.body.scrollTop)
   	},
   	methods:{
   		goback(){
   			history.back()
   		},
   		addcar:function(){
-  			JSON.stringify(this.message)
-  			console.log(JSON.stringify(this.message))
-  			localStorage.setItem('crowned',JSON.stringify(this.message))
+  			if(localStorage.getItem("crowned")){
+  				console.log(localStorage.getItem("crowned"));
+  				var temparr = localStorage.getItem("crowned");
+  				var tempJson = JSON.parse(temparr);
+  				tempJson.push(this.message[0]);
+  				console.log(JSON.stringify(tempJson));
+  				localStorage.setItem("crowned",JSON.stringify(tempJson));
+  				console.log("============================");
+  			}else{
+  				JSON.stringify(this.message);
+  				localStorage.setItem('crowned',JSON.stringify(this.message));
+  				console.log(this.proMsg);
+  			}
   		}
-  	}
+  	},
+  	// mounted:function(){
+  	// }
 }
 </script>
 

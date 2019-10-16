@@ -1,25 +1,25 @@
 <template>
-  <div class="cezhan">
-  	<div v-for="(i,j) in sets" :key="j">
-  		<img :src="i.path" alt="">
-  		<h3>{{i.tit}}</h3>
-  		<p><b>{{i.author}}</b></p>
-  		<span>{{i.span}}</span>
-  		<div class="btn">
-  			<el-button type="text" @click="dialogVisible = true"><b>进入查看 〉</b></el-button>
-  			<el-dialog
-  			  title="购票即看艺博会全部作品"
-  			  :visible.sync="dialogVisible"
-  			  width="350px">
-  			  <p>一次购票，不限次看展</p>
-  			  <p>免费获赠30天艺网VIP会员</p>
-  			  <span slot="footer" class="dialog-footer">
-  			    <el-button type="primary" @click="dialogVisible = false">立即购票</el-button>
-  			  </span>
-  			</el-dialog>
-  		</div>
-  	</div>
-  </div>
+    <div class="cezhan">
+        <div v-for="(i,j) in sets" :key="j">
+            <img :src="i.path" alt="">
+            <h3>{{i.tit}}</h3>
+            <p><b>{{i.author}}</b></p>
+            <span>{{i.span}}</span>
+            <div class="btn">
+                <el-button type="text" @click="dialogVisible = true"><b>进入查看 〉</b></el-button>
+                <el-dialog
+                  title="购票即看艺博会全部作品"
+                  :visible.sync="dialogVisible"
+                  width="350px">
+                  <p>一次购票，不限次看展</p>
+                  <p>免费获赠30天艺网VIP会员</p>
+                  <span slot="footer" class="dialog-footer">
+                    <el-button type="primary" @click="dialogVisible = false">立即购票</el-button>
+                  </span>
+                </el-dialog>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>

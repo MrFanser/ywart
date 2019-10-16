@@ -257,7 +257,6 @@ export default {
     background-color: #eee;
   }
   header{
-    width: 500px;
     background-color: #fff;
   }
   header,li,.logOut{

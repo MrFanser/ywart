@@ -1,86 +1,62 @@
 <template>
-  <div class="shoppingCar">
-  	<header>
-  		<span><img src="../../static/image/index/public/Headerkefu.png" alt=""></span>
-  		<span>购物车</span>
-  		<span class="hid">1</span>
-  	</header>
-  	<div class="sumNum">
-  		<p><span>购物车</span><span>{{shoppingList.length}}</span></p>
+  	<div class="shoppingCar">
+	  	<header>
+	  		<span><img src="../../static/image/index/public/Headerkefu.png" alt=""></span>
+	  		<span>购物车</span>
+	  		<span class="hid">1</span>
+	  	</header>
+	  	<div class="sumNum">
+	  		<p><span>购物车</span><span>{{shoppingList.length}}</span></p>
+	  	</div>
+	  	<div class="shoppingPro" v-for="n in shoppingList">
+	  		<input type="checkbox" >
+	  		<img :src="n.url" alt="">
+	  		<p class="proMsg">
+	  			<span>{{n.proName}}</span>
+	  			<br>
+	  			<span>{{n.author}}</span>
+	  			<br>
+	  			<span class="proStyle">{{n.size}}</span>
+	  			<br>
+	  			<span class="proStyle">边框</span>
+	  			<br>
+	  			<span>&yen;{{n.price}}</span>
+	  		</p>
+	  	</div>
+	  	<div class="recommendPro">
+	  		<div class="tit">你可能会喜欢</div>
+	  		<div class="proBox" >
+	  			<div class="proUnit"  v-for="n in recommendPro">
+	  				<img src="../../static/image/index/literary/6.jpg" alt="">
+	  				<br>
+	  				<span>
+	  					<span>{{n.proName}}.{{n.author}}</span>
+	  					<br>
+	  					<span>&yen;{{n.price}}</span>
+	  				</span>
+	  			</div>
+	  		</div>
+	  	</div>
+	  	<footer>
+	  		<span>
+	  			<span><input type="checkbox">全选</span>
+	  			<span>移除</span>
+	  		</span>
+	  		<span>
+	  			<span>（不含运费）合计<span class="sumCost">&yen;{{sumCost}}</span></span>
+	  			<span class="sumitBtn">结算{{shoppingList.length}}</span>
+	  		</span>
+	  	</footer>
   	</div>
-  	<div class="shoppingPro" v-for="n in shoppingList">
-  		<input type="checkbox" v-model="checkPro">
-  		<img src="../../static/image/index/recommend/11.jpg" alt="">
-  		<p class="proMsg">
-  			<span>{{n.proName}}</span>
-  			<br>
-  			<span>{{n.author}}</span>
-  			<br>
-  			<span class="proStyle">{{n.size}}</span>
-  			<br>
-  			<span class="proStyle">边框</span>
-  			<br>
-  			<span>&yen;{{n.price}}</span>
-  		</p>
-  	</div>
-  	<div class="recommendPro">
-  		<div class="tit">你可能会喜欢</div>
-  		<div class="proBox" >
-  			<div class="proUnit"  v-for="n in recommendPro">
-  				<img src="../../static/image/index/literary/6.jpg" alt="">
-  				<br>
-  				<span>
-  					<span>{{n.proName}}.{{n.author}}</span>
-  					<br>
-  					<span>&yen;{{n.price}}</span>
-  				</span>
-  			</div>
-  		</div>
-  	</div>
-  	<footer>
-  		<span>
-  			<span><input type="checkbox">全选</span>
-  			<span>移除</span>
-  		</span>
-  		<span>
-  			<span>（不含运费）合计<span class="sumCost">&yen;123</span></span>
-  			<span class="sumitBtn">结算{{shoppingList.length}}</span>
-  		</span>
-  	</footer>
-  </div>
 </template>
 
 <script>
 export default {
 	data(){
 		return{
+			sumCost:0,
 			checkPro:'',
-			shoppingList:[
-				{
-					proName:"寒冬一击",
-					author:"白裤裆",
-					price:777,
-					size:"50cm*60cm",
-					buy:true,
-					id:1
-				},
-				{
-					proName:"艺术就是爆炸",
-					author:"ash",
-					price:333,
-					size:"90cm*90cm",
-					buy:true,
-					id:2
-				},
-				{
-					proName:"blyat",
-					author:"fuze",
-					price:555,
-					size:"100cm*100cm",
-					buy:true,
-					id:3
-				}
-			],
+			shoppingList:[],
 			recommendPro:[
 				{
 					proName:"欢迎光临",
@@ -109,15 +85,26 @@ export default {
 		}
 	},
 	methods:{
-		function(){
-			console.log(111)
-		}
+		
 	},
 	watch:{
 		checkPro:function(newValue){
 			this.checkPro=newValue;
 			console.log(this.checkPro);
 		}
+	},
+	mounted:function(){
+		let asd=localStorage.getItem("crowned");
+		console.log(asd);
+		let tempmsg = JSON.parse(asd);
+		console.log(tempmsg);
+		this.shoppingList=tempmsg;
+		console.log(this.shoppingList);
+		let tempCost=0;
+		for(var i in tempmsg){
+			tempCost += Number(tempmsg[i].price)
+		};
+		this.sumCost=tempCost;
 	}
 }
 </script>

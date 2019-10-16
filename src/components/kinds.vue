@@ -5,7 +5,7 @@
 	  	</header>
 	  	<div class="tagp">
 		  	<p class="tag">
-		  		<span v-on:click="bgc">分类 | </span>
+		  		<span>分类 | </span>
 		  		<span>油画</span>
 		  		<span>版画</span>
 		  		<span>水墨</span>
@@ -42,9 +42,9 @@
 		  		<span class="headTagOther">筛选<img src="/static/image/index/public/sxct.png" alt=""></span>
 		  	</p>	
 	  	</div>
-	  		<div class="pb">
-	  			<vue-waterfall-easy :imgsArr="imgsArr"></vue-waterfall-easy>
-	  		</div>
+	  	<div class="pb">
+	  		<vue-waterfall-easy :imgsArr="imgsArr" @click="clickFn"><span>123</span></vue-waterfall-easy>
+	  	</div>
     </div>
 </template>
  
@@ -56,8 +56,16 @@ export default {
 			imgsArr: [],
 			// fetchImgsArr: [],
 			canShow:"",
+			id:"001",
 			fixedBox:"fixedBox",
 			floatBox:"floatBox",
+			recommendPro:
+				{
+					proName:"欢迎光临",
+					author:"foust",
+					price:233,
+					size:"20cm*60cm"
+				}
 		}
 	},
 	methods:{
@@ -73,14 +81,27 @@ export default {
 			}
 		},
 		initImgsArr (n, m) {
-		      　　　　var arr = []
-		      　　　　for (var i = n; i < m; i++) {
-		        　　　　　　 arr.push({ src: `/static/image/index/latent/gkj/${i + 1}.jpg`,
-		        			link: '', 
-		        			info: '一些图片描述文字' })
-		      　　　　}
-		      　　　　return arr
-		    　　　},
+		    var arr = []
+		    for (var i = n; i < m; i++) {
+		        arr.push({ src: `/static/image/index/latent/gkj/${i + 1}.jpg`,
+		        link: '', 
+		        info: '一些图片描述文字' })
+		    }
+		    return arr
+		},
+		clickFn(event,{index,value}){
+			event.preventDefault()
+			if(event.target.tagName.toLowerCase()=='img'){
+				console.log('img click',index,value);
+				this.$router.push({
+				  name:'Shopping',
+				  params:{
+				  	name:"Shopping",
+				    dataObj:this.recommendPro
+				  }
+				})
+			}
+		}
 	},
 	created () {
 	    　　　　this.imgsArr = this.initImgsArr(0, 18)
