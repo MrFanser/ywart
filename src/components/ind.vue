@@ -34,18 +34,26 @@
 	  		</router-link>
   		</div>
   		<div class="ecpa">
-  			<router-link to="/index/gallery">
-  				<img src="/static/image/index/recommend/lt.jpg" alt="">
-  			</router-link>
-  			<router-link to="/index/cezhan">
-  				<img src="/static/image/index/recommend/rt.jpg" alt="">
-  			</router-link>
-  			<router-link to="/index/public">
-  				<img src="/static/image/index/recommend/ld.jpg" alt="">
-  			</router-link>
-  			<router-link to="/index/shede">
-  				<img src="/static/image/index/recommend/rd.jpg" alt="">
-  			</router-link>
+  			<div>
+	  			<router-link to="/index/gallery">
+	  				<img src="/static/image/index/recommend/lt.jpg" alt="">
+	  			</router-link>	
+  			</div>
+  			<div>
+	  			<router-link to="/index/cezhan">
+	  				<img src="/static/image/index/recommend/rt.jpg" alt="">
+	  			</router-link>	
+  			</div>
+  			<div>
+	  			<router-link to="/index/public">
+	  				<img src="/static/image/index/recommend/ld.jpg" alt="">
+	  			</router-link>	
+  			</div>
+  			<div>
+	  			<router-link to="/index/shede">
+	  				<img src="/static/image/index/recommend/rd.jpg" alt="">
+	  			</router-link>	
+  			</div>
   		</div>
   		<div class="tit show">
   			<h4>热门原创/POPULAR</h4>
@@ -53,7 +61,7 @@
   		</div>
   		<nav>
 	  		<div class="imgs" v-for="(n,i) in goods" :key="i">
-	  			<router-link to="/index/shopping"><img :src="n.url" alt=""><br></router-link>
+	  			<img :src="n.url" alt=""><br>
 	  			<span>&yen;{{n.price}}</span><br>
 	  			<span>{{n.induce}}</span>
 	  		</div>	
@@ -65,9 +73,7 @@
   			</div>
   			<router-link to="">
   				<img src="/static/image/index/recommend/1.gif" alt="">
-  				<span>点击查看
-  				<img src="/static/image/index/public/indexjt.png" alt="">
-  				</span>
+  				<span>点击查看</span>
   			</router-link>
   		</div>
   		<div class="tit art">
@@ -77,9 +83,7 @@
   			</div>
   			<router-link to="">
   				<img src="/static/image/index/recommend/good.gif" alt="">
-  				<span>点击查看
-  				<img src="/static/image/index/public/indexjt.png" alt="">
-  				</span>
+  				<span>点击查看</span>
   			</router-link>
   		</div>
   		<div class="tit bespoke">
@@ -89,9 +93,7 @@
   			</div>
   			<router-link to="">
   				<img src="/static/image/index/recommend/10.jpg" alt="">
-  				<span>点击查看
-  				<img src="/static/image/index/public/indexjt.png" alt="">
-  				</span>
+  				<span>点击查看</span>
   			</router-link>
   		</div>
   		<div class="fot">
@@ -221,20 +223,26 @@ export default {
 		line-height: 20px;
 	}
 	img{
-		width:500px;
+		max-width: 700px;
+		width: 100%;
 	}
 }
 .tit div{
 	margin: 50px 0;
 }
 .ecpa{
-	width:500px;
+	max-width: 700px;
+	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-content: space-around;
-	img{
-		width: 245px;
+	text-align: center;
+	div{
+		width: 45%;
+		img{
+			width: 100%;
+		}
 	}
 }
 .show{
@@ -307,7 +315,8 @@ nav{
 	}
 }
 .fot img{
-	width: 500px;
+	max-width: 700px;
+	width: 100%;
 }
 .footer{
 	text-align: center;

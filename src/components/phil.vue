@@ -1,6 +1,7 @@
 <template>
   <div class="phil">
   	<div class="head">
+      <img @click="goback" src="/static/image/index/public/back.png" alt="">
   		<p>艺网微个展 李龙飞 | 理性、哲学、空灵</p>
   		<img src="/static/image/index/latent/phil/0.jpg" alt="">
   		<span>艺网微个展 李龙飞 | 理性、哲学、空灵</span>
@@ -92,11 +93,11 @@
       <p>智象当代艺术展，悦.美术馆，北京</p>
   	</div>
   	<div class="more">
-  		<h1>更多作品</h1>
-  		<div>
+  		<h3>更多作品</h3>
+  		<div class="kuang">
 	  		<div class="pic" v-for="i in more">
 	  			<img :src="i.url" alt="">
-	  			<span>{{i.author}}</span>
+	  			<span>{{i.author}}</span><br>
 		  		<span>{{i.size}}</span>
 		  		<h3>{{i.price}}</h3>	
 	  		</div>	
@@ -262,32 +263,42 @@ export default {
   			}
   		]
   	}
+  },
+  methods:{
+    goback(){
+      history.back()
+    }
   }
 }
 </script>
 
 <style scoped lang="less">
 .phil{
-	width: 500px;
+	max-width: 700px;
+  width: 100%;
 	position: relative;
   h3{
     text-align: center;
   }
 	img{
-		width: 497px;
+		  max-width: 700px;
+      width: 100%;
 	}
 	span{
-		margin: 30px 0;
 		color: #666;
 	}
-	>div>span{
+	&>div>span{
 		position: relative;
-		left: 25px;
 		display: inline-block;
 		
 	}
 	.head{
 		text-align: center;
+    img:first-child{
+      width:20px;
+      position: absolute;
+      left:5px;
+    }
 		span{
 			position: relative;
 			left: 0;
@@ -296,7 +307,9 @@ export default {
 	}
 	.describe{
 		display: block;
-		width: 450px;
+		max-width: 700px;
+    min-width: 300px;
+    width: 100%;
 	}
 	.induc{
 		text-align: center;
@@ -311,32 +324,41 @@ export default {
 		position: relative;
 		border-top: 2px dotted #666;
 		margin: 80px 0;
-		width: 500px;
-		h1{
+		max-width: 700px;
+    width: 100%;
+		h3{
 			position: relative;
-			top:-45px;
-			left:150px;
-			width:200px;
+			top:-15px;
+      margin:auto;
+			width:100px;
 			text-align: center;
 			background-color: #fff;
 			color: #666;
 		}
-		>div{
+		&>div{
 			display: flex;
-			width: 500px;
+		  max-width: 700px;
+      width: 100%;
 			justify-content: space-between;
 			align-content: space-between;
 			flex-wrap: wrap;
 		}
-		.pic{
-			width: 240px;
-			img{
-				width: 100%;
-			}
-			h3{
-				color: green;
-			}
-		}
+    .kuang{
+      max-width: 700px;
+      width: 100%;
+  		.pic{
+  			width: 45%;
+  			img{
+  				width: 100%;
+  			}
+  			h3{
+          text-align: center;
+  				color: green;
+          position: relative;
+          top:0px;
+  			}
+  		}
+    }
 	}
 }
 

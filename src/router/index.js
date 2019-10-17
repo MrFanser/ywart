@@ -27,18 +27,9 @@ import Shede from '@/components/index/shede'
 import About from '@/components/index/about'
 import Shopping from '@/components/index/shopping'
 import Voide from '@/components/index/voide'
+import Singin from '@/components/index/singin'
 
 Vue.use(Router)
-const router = new Router({
-    //在此处加入以下内容
-    scrollBehavior(to,from,saveTop){
-	    if(saveTop){
-	        return saveTop;
-	    }else{
-	        return {x:0,y:0}
-	    }
-    },
-})
 
 export default new Router({
     routes: [
@@ -186,6 +177,11 @@ export default new Router({
 		path:'/index/voide',
     	name:'Voide',
 		component:Voide
+    },
+    {
+    	path:'/index/singin',
+     	name:'Singin',
+    	component:Singin
     }
   ]
 })

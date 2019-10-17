@@ -1,57 +1,57 @@
 <template>
     <div class="art">
-  	  		<header>
-  		        <div class="slide">
-  		            <el-row :gutter="0">
-  		              	<el-col :span="4">
-  		              		<el-radio-group v-model="direction">
-  		              		  <el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
+  	  	<header>
+  	       	<div class="slide">
+  	            <el-row :gutter="0">
+  	              	<el-col :span="4">
+  	              		<el-radio-group v-model="direction">
+  		              		<el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
   		              		    <img src="/static/image/index/latent/art/neum.png" alt="">
-  		              		  </el-button>
-  		              		</el-radio-group>
-  		              		<div>
-  			              		<el-drawer
-  			              		  :visible.sync="drawer"
-  			              		  :direction="direction">
-  			              		  <div @click="drawer = false"><router-link to="/index/art">首页</router-link></div>
-  			              		  <div class="jump">
+  		              		</el-button>
+  		              	</el-radio-group>
+  		              	<div>
+  			              	<el-drawer
+  			              		:visible.sync="drawer"
+  			              		:direction="direction">
+  			              		<div @click="drawer = false"><router-link to="/ind">首页</router-link></div>
+  			              		<div class="jump">
   			              		  	<el-button type="text" @click="dialogVisible = true">全部作品</el-button>
   			              		  	<el-dialog
   			              		  	  title="购票即看艺博会全部作品"
   			              		  	  :visible.sync="dialogVisible"
   			              		  	  width="350px">
-  			              		  	  <p>一次购票，不限次看展</p>
-  			              		  	  <p>免费获赠30天艺网VIP会员</p>
-  			              		  	  <span slot="footer" class="">
-  			              		  	    <el-button type="primary" @click="dialogVisible = false">立即购票</el-button>
-  			              		  	  </span>
+	  			              		  	<p>一次购票，不限次看展</p>
+	  			              		  	<p>免费获赠30天艺网VIP会员</p>
+	  			              		  	<span slot="footer" class="">
+	  			              		  	    <el-button type="primary" @click="dialogVisible = false">立即购票</el-button>
+	  			              		  	</span>
   			              		  	</el-dialog>
-  			              		  </div>
-  			              		  <div v-for="(m,n) in item" @click="pay(m.name)">
-	  			              		  <div @click="drawer = false">
+  			              		</div>
+  			              		<div v-for="(m,n) in item" @click="pay(m.name)">
+	  			              		<div @click="drawer = false">
 	  			              		  	<router-link :to="m.path">{{m.name}}</router-link>
-	  			              		  </div>
-	  			              	  </div>
-  			              		</el-drawer>	
-  		              		</div>
-  		              	</el-col>
-  		              	<el-col :span="16">
-  		                  	<span class="aite"><b>{{tit}}</b></span>
-  		              	</el-col>
-  		              	<el-col :span="4">
-  		                  	<el-dropdown>
-  		                  	  <span class="el-dropdown-link"><img src="/static/image/index/latent/art/gui.jpg" alt="" class="two">
-  		                  	  </span>
-  		                  	  <el-dropdown-menu slot="dropdown" trigger="click">
+	  			              		</div>
+	  			              	</div>
+  			              	</el-drawer>	
+  		              	</div>
+  		            </el-col>
+  		            <el-col :span="16">
+  		                <span class="aite"><b>{{tit}}</b></span>
+  		            </el-col>
+  		            <el-col :span="4">
+  		                <el-dropdown>
+  		                  	<span class="el-dropdown-link"><img src="/static/image/index/latent/art/gui.jpg" alt="" class="two">
+  		                  	</span>
+  		                  	<el-dropdown-menu slot="dropdown" trigger="click">
   		                  	    <router-link to=""><el-dropdown-item>个人中心</el-dropdown-item></router-link>
   		                  	    <router-link to=""><el-dropdown-item>我的订单</el-dropdown-item></router-link>
   		                  	    <router-link to=""><el-dropdown-item>退出登录</el-dropdown-item></router-link>
-  		                  	  </el-dropdown-menu>
-  		                  	</el-dropdown>
-  		              	</el-col>
-  		            </el-row> 
-  		        </div>
-  	        </header>
+  		                  	</el-dropdown-menu>
+  		                </el-dropdown>
+  		            </el-col>
+  		        </el-row> 
+  		    </div>
+  	    </header>
   	    <router-view/>
   	    <div>
   	    	<div class="pay">购买展览通票</div>
@@ -116,22 +116,24 @@ export default {
 	box-shadow: none;
 	margin-top: 50px;
 	header{
+		max-width: 700px;
+		width: 100%;
 		display: none;
 		background-color: #fff;
 	}
 	section{
 		text-align: center;
 		background-color: #eee;
-		width:500px;
+		max-width: 700px;
+		width: 100%;
 		position: relative;
-		margin-left: 8px;
 		padding-bottom: 10px;
 		span{
 			color:#333;
 		}
  		a{
 			display: block;
-			padding:6px 0;
+			padding:0px 0;
 			color:#333;
 			text-decoration: none;
 			z-index: 3000;
@@ -147,21 +149,23 @@ export default {
 .jump .el-dialog__footer{
 	margin:auto;
 	position: relative;
-	right:100px;
 	button{
 		background-color: #fec400;
 		border:none;
 	}
 }
 .art{
-	width: 500px;
+	max-width: 700px;
+	width: 100%;
 	header{
-		width: 500px;
+		max-width: 700px;
+		width: 100%;
 		height: 50px;
 		z-index: 10;
 		background-color: #fec400;
 		position: fixed;
 		top:0;
+		text-align: center;
 	}
 	.slide{
 		position: relative;
@@ -180,7 +184,7 @@ export default {
 		.el-button{
 			background-color: transparent;
 			width: 120px;
-			height: 45px;
+			height: 30px;
 			padding:0;
 			position: relative;
 			left:-20px;
@@ -207,7 +211,8 @@ export default {
 			text-align: left;
 		}
 		hr{
-			width: 500px;
+			max-width: 700px;
+			width: 100%;
 			position: relative;
 			left: -32px;
 		}

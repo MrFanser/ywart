@@ -105,7 +105,7 @@
 			</div>
 		</section>
 	  	<div class="pay">
-	  		<div class="car"><img src="/static/image/index/public/wcar.png" alt=""><br>购物车</div>
+	  		<div class="car"><router-link to="/car"><img src="/static/image/index/public/wcar.png" alt=""><br>购物车</router-link></div>
 	  		<div class="add" v-on:click="addcar"><h2>加入购物车</h2></div>
 	  		<div class="payst"><h2>立即购买</h2></div>
 	  	</div>
@@ -179,22 +179,16 @@ export default {
   		},
   		addcar:function(){
   			if(localStorage.getItem("crowned")){
-  				console.log(localStorage.getItem("crowned"));
   				var temparr = localStorage.getItem("crowned");
   				var tempJson = JSON.parse(temparr);
   				tempJson.push(this.message[0]);
-  				console.log(JSON.stringify(tempJson));
   				localStorage.setItem("crowned",JSON.stringify(tempJson));
-  				console.log("============================");
   			}else{
   				JSON.stringify(this.message);
   				localStorage.setItem('crowned',JSON.stringify(this.message));
-  				console.log(this.proMsg);
   			}
   		}
-  	},
-  	// mounted:function(){
-  	// }
+  	}
 }
 </script>
 

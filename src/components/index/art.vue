@@ -1,57 +1,5 @@
 <template>
  	<div class="art">
- 		<header>
-  		        <div class="slide">
-  		            <el-row :gutter="0">
-  		              	<el-col :span="4">
-  		              		<el-radio-group v-model="direction">
-  		              		  <el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
-  		              		    <img src="/static/image/index/latent/art/neum.png" alt="">
-  		              		  </el-button>
-  		              		</el-radio-group>
-  		              		<div>
-  			              		<el-drawer
-  			              		  :visible.sync="drawer"
-  			              		  :direction="direction">
-  			              		  <div @click="drawer = false"><router-link to="/index/art">首页</router-link></div>
-  			              		  <div class="jump">
-  			              		  	<el-button type="text" @click="dialogVisible = true">全部作品</el-button>
-  			              		  	<el-dialog
-  			              		  	  title="购票即看艺博会全部作品"
-  			              		  	  :visible.sync="dialogVisible"
-  			              		  	  width="350px">
-  			              		  	  <p>一次购票，不限次看展</p>
-  			              		  	  <p>免费获赠30天艺网VIP会员</p>
-  			              		  	  <span slot="footer" class="">
-  			              		  	    <el-button type="primary" @click="dialogVisible = false">立即购票</el-button>
-  			              		  	  </span>
-  			              		  	</el-dialog>
-  			              		  </div>
-  			              		  <div v-for="(m,n) in itemm" @click="pay(m.name)">
-	  			              		  <div @click="drawer = false">
-	  			              		  	<router-link :to="m.path">{{m.name}}</router-link>
-	  			              		  </div>
-	  			              	  </div>
-  			              		</el-drawer>	
-  		              		</div>
-  		              	</el-col>
-  		              	<el-col :span="16">
-  		                  	<span class="aite"><b>AITE ONLINE艺博会</b></span>
-  		              	</el-col>
-  		              	<el-col :span="4">
-  		                  	<el-dropdown>
-  		                  	  <span class="el-dropdown-link"><img src="/static/image/index/latent/art/gui.jpg" alt="" class="two">
-  		                  	  </span>
-  		                  	  <el-dropdown-menu slot="dropdown" trigger="click">
-  		                  	    <router-link to=""><el-dropdown-item>个人中心</el-dropdown-item></router-link>
-  		                  	    <router-link to=""><el-dropdown-item>我的订单</el-dropdown-item></router-link>
-  		                  	    <router-link to=""><el-dropdown-item>退出登录</el-dropdown-item></router-link>
-  		                  	  </el-dropdown-menu>
-  		                  	</el-dropdown>
-  		              	</el-col>
-  		            </el-row> 
-  		        </div>
-  	        </header>
 		<div class="lun">
 			<el-carousel height="500px">
 			    <el-carousel-item v-for="i in item">
@@ -62,7 +10,7 @@
 			<p>主旨与理念</p>
 			<span>AITE ONLINE艺术博览会，是中国首个在互联网上展览展示的艺术博览会，AITEONLINE艺术博览会旨在将传统的艺术博览会模式进行创新，通过互联网模式让当代艺术广泛传播，这将成为传统艺术博览会的重要补充环节，更是艺术博览会未来的发展趋势。AITE ONLINE艺术博览会，将为您呈现多家艺术机构的知名艺术家作品、联合多位著名策展人策展不同主题的专业展览，联手上千位潜力艺术家展示海量的优秀艺术作品。</span>
 			<div class="btn btnwhite"><router-link to="">了解更多</router-link></div>
-			<div class="slide slidebgc slidefore">
+			<div class="slide slidebgc slidefore midle">
 				<el-tabs v-model="activeName2" type="card" @tab-click="handleClick">
 				    <el-tab-pane label="参展机构" name="first">
 						<div class="gallery">
@@ -85,9 +33,9 @@
 				    	</div>
 				    </el-tab-pane>
 				</el-tabs>
-				<div class="btnall btnwhite">浏览全部作品</div>
+				<div class="btnall btnwhite cen">浏览全部作品</div>
 			</div>
-			<div class="kuang">
+			<div class="kuang midle">
 				<p class="big"><b>参展机构</b>GALLERY</p>
 				<div class="flex">
 					<div class="imgs" v-for="n in goods">
@@ -95,9 +43,9 @@
 						<span>{{n.induce}}</span>
 					</div>
 				</div>
-				<div class="btn"><router-link to="">浏览全部</router-link></div>
+				<div class="btn cen"><router-link to="">浏览全部</router-link></div>
 			</div>
-			<div class="kuang kuangbgc">
+			<div class="kuang kuangbgc midle">
 				<p class="big"><b>策展单元</b>CURATION</p>
 				<div class="flex">
 					<div class="imgs imgbgc" v-for="n in good">
@@ -106,9 +54,9 @@
 						<span>{{n.induce}}</span>
 					</div>
 				</div>
-				<div class="btn btnwhite"><router-link to="">浏览全部</router-link></div>
+				<div class="btn btnwhite cen"><router-link to="">浏览全部</router-link></div>
 			</div>
-			<div class="mide">
+			<div class="mide midle">
 				<p class="big"><b>公共项目</b>PUBLIC</p>
 				<el-tabs v-model="activeName3" type="card" @tab-click="handleClick">
 					<el-tab-pane :label="n.label" :name="n.name" v-for="n in size">
@@ -121,11 +69,11 @@
 						</div>
 					</el-tab-pane>	
 				</el-tabs>
-				<div class="btn"><router-link to="">浏览全部</router-link></div>
+				<div class="btn cen"><router-link to="">浏览全部</router-link></div>
 			</div>
 			<div>
 			    <div class="kuang kuangbgc">
-						<p class="big"><b>艺术舍得</b>SHEDE</p>
+					<p class="big"><b>艺术舍得</b>SHEDE</p>
 				    <div class="flex">
 				        <div class="imgs imgbgc" v-for="n in gooder">
 				        	<img :src="n.url" alt=""><br>
@@ -446,14 +394,16 @@ export default {
   		handleClick(tab, event) {
         console.log(tab, event);
   	    },
-  	    pay(n){
-    		this.tit = n
-    	}
+  	  //   pay(n){
+    	// 	this.tit = n
+    	// }
   	}
 }
 </script>
 <style scroped lang="less">
 .art{
+	max-width: 700px;
+	width: 100%;
 	p{
 		text-align: center;
 	}
@@ -468,7 +418,7 @@ export default {
 		a{
 			line-height: 50px;
 			text-decoration: none;
-			padding: 10px 30px;
+			padding: 10px 0px;
 			color:#333;
 			background-color: #eeeeee;
 		}
@@ -476,23 +426,30 @@ export default {
 			text-align: center;
 			position: relative;
 		}
-		header{
-			width: 500px;
+	}
+	.midle{
+		.cen{
+			position: relative;
+			left: 50%;
+			transform: translate(-50%);
 		}
 	}
 	.slidefore{
+		max-width: 700px;
+		width: 100%;
 		height: 370px;
 		.el-tabs__item{
-			width: 124px;
+			text-align: center;
 			color: #333;
 		}
 		.gallery{
-			width: 500px;
-			height: 350px;
+			max-width: 700px;
+			width: 100%;
+			height: 300px;
 			background-color: #fec400;
 		}
 		img{
-			height: 250px;
+			height: 200px;
 		}
 	}
 	.slidebgc{
@@ -501,7 +458,8 @@ export default {
 			background-color: #fec400;
 			img{
 				height: 250px;
-				width: 480px;
+				max-width: 700px;
+				width: 100%;
 				margin-top: 20px;
 				background-color: #cb9d00;
 			}
@@ -513,7 +471,7 @@ export default {
 		background-color: #fec400;
 		position: relative;
 		text-align: center;
-		left:190px;
+		margin:auto;
 		a{
 			text-decoration: none;
 			color:#333;
@@ -532,7 +490,8 @@ export default {
 	}
 	.lun{
 		img{
-			width: 500px;
+			max-width: 700px;
+			width: 100%;
 		}
 		.mide{
 			.btn{
@@ -549,7 +508,7 @@ export default {
 				align-content: space-between;
 				flex-wrap: wrap;
 				.imgs{
-					width: 230px;
+					width: 45%;
 					img{
 						width: 100%;
 					}
@@ -559,7 +518,6 @@ export default {
 		.kuang{
 			text-align: center;
 			.btn{
-				left:190px;
 				margin: 30px 0;
 			}
 			.flex{
@@ -568,7 +526,7 @@ export default {
 				align-content: space-around;
 				flex-wrap: wrap;
 				.imgs{
-					width: 240px;
+					width: 45%;
 					img{
 						width:100%;
 					}
@@ -576,20 +534,17 @@ export default {
 			}	
 		}
 		.last{
-			width: 480px;
+			max-width: 700px;
+			width: 100%;
 			margin:auto;
 			img{
 				margin: 10px 0 30px 0;
-				width: 460px;
+				max-width: 700px;
+				width: 100%;
 				height: 250px;
 			}
 		}
 		.kuangbgc{
-			span{
-				display: block;
-				padding-bottom: 30px;
-				font-size:25px;
-			}
 			background-color: #fec400;
 			.btn{
 				bottom:20px;
@@ -599,16 +554,18 @@ export default {
 				text-align: left;
 				font-size: 12px;
 				background-color: #fff;
-				padding-bottom: 30px;
+				span{
+					font-size: 18px;
+				}
 			}
 		}
 		.slideflex{
 			display: flex;
 			justify-content: space-between;
 			a{
-				padding: 10px 30px;
+				padding: 10px 0px;
 			}
 		}
-	} 
+	}
 }
 </style>

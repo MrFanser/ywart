@@ -44,18 +44,20 @@ export default {
 
 <style scroped lang="less">
 .shede{
-	width: 500px;
+	max-width: 700px;
+	width: 100%;
 	h3{
-		font-size: 30px;
+		margin:10px 0;
 	}
 	>img{
-		width: 500px;
+		max-width: 700px;
+		width: 100%;
 	}
 	.fleximg{
 		display: flex;
 		justify-content: space-around;
 		img{
-			width: 230px;
+			width: 45%;
 			margin: 20px 0;
 
 		}
@@ -71,7 +73,8 @@ export default {
 	}
 	.she{
 		img{
-			width:500px;
+			max-width: 700px;
+			width: 100%;
 		}
 		span{
 			display: block;

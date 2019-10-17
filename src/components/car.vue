@@ -1,15 +1,14 @@
 <template>
   	<div class="shoppingCar">
 	  	<header>
-	  		<span><img src="../../static/image/index/public/Headerkefu.png" alt=""></span>
+	  		<span @click="goback"><img src="/static/image/index/public/back.png" alt=""></span>
 	  		<span>购物车</span>
 	  		<span class="hid">1</span>
 	  	</header>
 	  	<div class="sumNum">
 	  		<p><span>购物车</span><span>{{shoppingList.length}}</span></p>
 	  	</div>
-	  	<div class="shoppingPro" v-for="n in shoppingList">
-	  		<input type="checkbox" >
+	  	<div class="shoppingPro" v-for="(n,i) in shoppingList">
 	  		<img :src="n.url" alt="">
 	  		<p class="proMsg">
 	  			<span>{{n.proName}}</span>
@@ -22,12 +21,13 @@
 	  			<br>
 	  			<span>&yen;{{n.price}}</span>
 	  		</p>
+	  		<span @click='afterRemoPro'><input type="button" value="移除" @click="shoppingList.splice(i,1);"></span>
 	  	</div>
 	  	<div class="recommendPro">
 	  		<div class="tit">你可能会喜欢</div>
 	  		<div class="proBox" >
 	  			<div class="proUnit"  v-for="n in recommendPro">
-	  				<img src="../../static/image/index/literary/6.jpg" alt="">
+	  				<img :src="n.url" alt="">
 	  				<br>
 	  				<span>
 	  					<span>{{n.proName}}.{{n.author}}</span>
@@ -37,7 +37,7 @@
 	  			</div>
 	  		</div>
 	  	</div>
-	  	<footer>
+	  	<div class="footer">
 	  		<span>
 	  			<span><input type="checkbox">全选</span>
 	  			<span>移除</span>
@@ -46,7 +46,7 @@
 	  			<span>（不含运费）合计<span class="sumCost">&yen;{{sumCost}}</span></span>
 	  			<span class="sumitBtn">结算{{shoppingList.length}}</span>
 	  		</span>
-	  	</footer>
+	  	</div>
   	</div>
 </template>
 
@@ -62,36 +62,53 @@ export default {
 					proName:"欢迎光临",
 					author:"foust",
 					price:233,
-					size:"20cm*60cm"
+					size:"20cm*60cm",
+					url:'/static/image/index/latent/16.jpg'
 				},
 				{
 					proName:"艺术就是爆炸",
 					author:"ash",
 					price:333,
-					size:"90cm*90cm"
+					size:"90cm*90cm",
+					url:'/static/image/index/latent/17.jpg'
 				},
 				{
 					proName:"blyat",
 					author:"fuze",
 					price:555,
-					size:"100cm*100cm"
+					size:"100cm*100cm",
+					url:'/static/image/index/latent/18.jpg'
 				},
 				{
 					proName:"nocknock",
 					author:"calllllll",
 					price:5555,
-					size:"100cm*100cm"
+					size:"100cm*100cm",
+					url:'/static/image/index/latent/7.jpg'
 				}],
 		}
 	},
 	methods:{
-		
+		afterRemoPro:function(){
+			let tempmsg = this.shoppingList;
+			let tempCost = 0;
+			for(var i in tempmsg){
+				tempCost += Number(tempmsg[i].price)
+			};
+			this.sumCost=tempCost;
+			var tempNewProList = JSON.stringify(this.shoppingList);
+			localStorage.setItem("crowned",tempNewProList)
+		},
+		goback(){
+			history.back()
+		}
 	},
 	watch:{
 		checkPro:function(newValue){
 			this.checkPro=newValue;
 			console.log(this.checkPro);
 		}
+		
 	},
 	mounted:function(){
 		let asd=localStorage.getItem("crowned");
@@ -120,10 +137,9 @@ export default {
 		visibility: hidden;
 	}
 	header{
+		background-color: #fff;
 		display: flex;
-		justify-content: space-between;
 		height: 30px;
-		align-items: center;
 		font-size: 20px;
 	}
 	header img{
@@ -136,12 +152,24 @@ export default {
 		font-weight: bold;
 	}
 	.shoppingPro{
-		height: 100px;
-		width: 500px;
-		border:1px solid green;
+		margin-top: 10px;
+		padding: 10px 0;
+		height: 30%;
+		max-width: 700px;
+		width: 100%;
+		position: relative;
 	}
 	.shoppingPro input{
 		vertical-align: middle;
+		width: 100px;
+		height: 45px;
+		position: relative;
+		left: 20%;
+		border:none;
+		background-color: #ff4201;
+		color: #fff;
+		font-size: 20px;
+		border-radius:5px;
 	}
 	.shoppingPro img{
 		vertical-align: middle;
@@ -154,41 +182,42 @@ export default {
 		color: #999;
 	}
 	.shoppingPro img{
-		height: 100px;
-		width: 100px;
+		width: 25%;
 	}
 	.recommendPro{
-		width: 500px;
+		max-width: 700px;
+		width: 100%;
 	}
 	.tit{
-		width: 500px;
+		max-width: 700px;
+		width: 100%;
 		text-align: center;
-		padding: 20px;
+		padding: 20px 0;
 		font-weight: bold;
 	}
 	.proBox{
-		width: 500px;
+		max-width: 700px;
+		width: 100%;
 		display: flex;
 		justify-content: space-around;
 		flex-wrap: wrap;
-		/*border: 1px solid green;*/
 	}
 	.proUnit{
-		width: 230px;
+		width: 45%;
 		text-align: right;
 		margin-bottom: 10px;
 	}
 	.proUnit img{
-		width: 230px;
-		height: 230px;
+		width: 100%;
 	}
-	footer{
+	.footer{
 		display: flex;
 		justify-content: space-between;
 		background-attachment: fixed;
 		bottom:60px;
 		height: 30px;
 		background-color: #fff;
+		margin:30px auto 100px;
 	}
 	.sumCost{
 		color: red;

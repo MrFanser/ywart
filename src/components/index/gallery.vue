@@ -1,7 +1,7 @@
 <template>
 	<div class="gallery">
 	  	<div class="block">
-	  	    <el-carousel trigger="click" height="400px">
+	  	    <el-carousel trigger="click">
 		  	    <el-carousel-item v-for="(i,j) in item" :key="j">
 		  	    	<img :src="i" alt="">
 		  	    </el-carousel-item>
@@ -84,7 +84,16 @@ export default {
 
 <style scroped lang="less">
 .gallery{
-	width:500px;
+	max-width: 700px;
+    width: 100%;
+    .block{
+    	max-width: 700px;
+    	width: 100%;
+    	margin-top: 50px;
+    	img{
+    		width: 100%;
+    	}
+    }
 	nav{
 		text-align: center;
 		.flex{
@@ -94,7 +103,7 @@ export default {
 			flex-wrap: wrap;
 			div{
 				text-align: left;
-				width: 240px;
+				width: 45%;
 				img{
 					width: 100%;
 				}

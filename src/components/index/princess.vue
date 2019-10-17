@@ -1,36 +1,37 @@
 <template>
-  <div class="princess">
-  	<div class="head">
-  		<p>姚文爽｜让一下！卷卷公主驾到！</p>
-  		<img src="/static/image/index/latent/princess/0.jpg" alt="">
-  		<span>姚文爽｜让一下！卷卷公主驾到！</span>
-  	</div>
-  	<div>
-  		<span class="describe">艺术家姚文爽创作了“卷卷公主”，他也常被称为“卷爸”。那长着一个大大的脑袋，两边晃动着小卷毛和一双豌豆眼的卷卷公主，传达给观赏者很多奇思妙想，充满灵气的卷卷公主就这样走进了人们的心头。现在，卷卷公主有了自己的漫画和周边，被孩子们喜爱，卷卷公主的形象也通过姚文爽的油画作品，有了更多新奇的内涵。</span>
-  		<div class="induc" v-for="(i,j) in item" :key="j">
-  			<img :src="i.url" alt="">
-  			<span>{{i.thems}}.{{i.data}}</span>
-  			<span>{{i.size}}</span>
-  		</div>	
-  		<span class="describe">欣赏卷卷公主，就像是和曾经的自己对话。毕竟，谁不怀念无拘无束的童年，谁不向往开心烂漫的日子呢？退一万步讲，谁还不是个小公主呢？ </span>
-  		<div class="induc" v-for="(i,j) in items" :key="j">
-  			<img :src="i.url" alt="">
-  			<span>{{i.thems}}.{{i.data}}</span>
-  			<span>{{i.size}}</span>
-  		</div>
+    <div class="princess">
+        <div class="backer" @click="goback"><img src="/static/image/index/public/back.png" alt=""></div>
+      	<div class="head">
+      		<p>姚文爽｜让一下！卷卷公主驾到！</p>
+      		<img src="/static/image/index/latent/princess/0.jpg" alt="">
+      		<span>姚文爽｜让一下！卷卷公主驾到！</span>
+      	</div>
+      	<div>
+      		<span class="describe">艺术家姚文爽创作了“卷卷公主”，他也常被称为“卷爸”。那长着一个大大的脑袋，两边晃动着小卷毛和一双豌豆眼的卷卷公主，传达给观赏者很多奇思妙想，充满灵气的卷卷公主就这样走进了人们的心头。现在，卷卷公主有了自己的漫画和周边，被孩子们喜爱，卷卷公主的形象也通过姚文爽的油画作品，有了更多新奇的内涵。</span>
+      		<div class="induc" v-for="i in item">
+      			<img :src="i.url" alt="">
+      			<span>{{i.thems}}.{{i.data}}</span>
+      			<span>{{i.size}}</span>
+      		</div>	
+      		<span class="describe">欣赏卷卷公主，就像是和曾经的自己对话。毕竟，谁不怀念无拘无束的童年，谁不向往开心烂漫的日子呢？退一万步讲，谁还不是个小公主呢？ </span>
+      		<div class="induc" v-for="i in items">
+      			<img :src="i.url" alt="">
+      			<span>{{i.thems}}.{{i.data}}</span>
+      			<span>{{i.size}}</span>
+      		</div>
+        </div>
+      	<div class="more">
+      		<h3>更多作品</h3>
+      		<div>
+    	  		<div class="pic" v-for="i in more">
+    	  			<img :src="i.url" alt="">
+    	  			<span>{{i.author}}</span>
+    		  		<span>{{i.size}}</span>
+    		  		<h4>{{i.price}}</h4>	
+    	  		</div>	
+      		</div>
+      	</div>
     </div>
-  	<div class="more">
-  		<h1>更多作品</h1>
-  		<div>
-	  		<div class="pic" v-for="(i,j) in more" :key="j">
-	  			<img :src="i.url" alt="">
-	  			<span>{{i.author}}</span>
-		  		<span>{{i.size}}</span>
-		  		<h3>{{i.price}}</h3>	
-	  		</div>	
-  		</div>
-  	</div>
-  </div>
 </template>
 
 <script>
@@ -138,24 +139,37 @@ export default {
   			}
   		]
   	}
+  },
+  methods:{
+    goback(){
+        history.back()
+    }
   }
 }
 </script>
 
 <style scoped lang="less">
 .princess{
-	width: 500px;
+	max-width: 700px;
+    width: 100%;
 	position: relative;
+    .backer{
+        position: absolute;
+        img{
+            width: 20px;
+            height: 20px;
+        }
+    }
 	img{
-		width: 497px;
+		max-width: 700px;
+        width: 100%;
 	}
 	span{
 		margin: 30px 0;
 		color: #666;
 	}
-	>div>span{
+	&>div>span{
 		position: relative;
-		left: 25px;
 		display: inline-block;
 		
 	}
@@ -169,7 +183,8 @@ export default {
 	}
 	.describe{
 		display: block;
-		width: 450px;
+		max-width: 700px;
+        width: 100%;
 	}
 	.induc{
 		text-align: center;
@@ -185,30 +200,32 @@ export default {
 		position: relative;
 		border-top: 2px dotted #666;
 		margin: 80px 0;
-		width: 500px;
-		h1{
+		max-width: 700px;
+        width: 100%;
+		h3{
 			position: relative;
-			top:-45px;
+			top:-15px;
 			left:150px;
-			width:200px;
+			width:100px;
 			text-align: center;
 			background-color: #fff;
 			color: #666;
 
 		}
-		>div{
+		&>div{
 			display: flex;
-			width: 500px;
+			max-width: 700px;
+            width: 100%;
 			justify-content: space-between;
 			align-content: space-between;
 			flex-wrap: wrap;
 		}
 		.pic{
-			width: 240px;
+			width: 45%;
 			img{
 				width: 100%;
 			}
-			h3{
+			h4{
 				color: green;
 			}
 		}

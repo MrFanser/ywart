@@ -24,7 +24,7 @@
 	  		<h3>艺术家</h3>
 	  		<div class="block">
 	  		  	<span class="demonstration"></span>
-	  		  	<el-carousel height="650px">
+	  		  	<el-carousel height="500px">
 	  		  		<el-carousel-item v-for="(i,g) in item" :key="g">
 	  		  		    <img :src="i" alt="">
 	  		  		</el-carousel-item>
@@ -111,59 +111,65 @@ export default {
 	margin: 0;
 	padding: 0;
 }
-.pb{
-	height: 2400px;
-	width: 500px;
-}
 .rudi{
-	width: 500px;
-}
-h3{
-	text-align: center;
-}
-.only img:first-child{
-	width: 500px;
-	height: 500px;
-}
-nav{
-	display: flex;
-	margin: 20px 10px 20px -25px; 
-	justify-content: space-around;
-		img{
-			height:120px;
+	max-width: 700px;
+	width: 100%;
+	h3{
+		text-align: center;
+	}
+	.only img:first-child{
+		max-width: 700px;
+		width: 100%;
+	}
+	nav{
+		max-width: 700px;
+		width: 100%;
+		display: flex;
+		margin: 20px 0; 
+		justify-content: space-around;
+		div{
+			width: 30%;
+			img{
+				width: 100%;
+			}
 		}
-		p{
-			text-align: center;
-		}
-}
-.all{
-	.hot{
-		img{
-			width: 500px;
+			p{
+				text-align: center;
+			}
+	}
+	.all{
+		.hot{
+			img{
+				max-width: 700px;
+				width: 100%;
+			}
+			span{
+				display: block;
+				text-align: right;
+			}
+			span:last-child{
+				margin-top: -15px;
+				margin-bottom: 15px;
+
+			}
 		}
 		span{
 			display: block;
-			text-align: right;
+			text-align: center;
 		}
-		span:last-child{
-			margin-top: -15px;
-			margin-bottom: 15px;
-
+		a{
+			text-decoration:none;
+			color:#777;
+		}
+		.block img{
+			max-width: 700px;
+			width: 90%;
 		}
 	}
-	span{
-		display: block;
-		text-align: center;
-	}
-	a{
-		text-decoration:none;
-		color:#777;
-	}
-	.block img{
-		width:500px;
-		// height: 500px;
+	.pb{
+		height: 1900px;
+		max-width: 700px;
+		width: 100%;
 	}
 }
-
-
 </style>

@@ -43,6 +43,9 @@
 	  			<div><b>U</b><b>V</b><b>W</b><b>X</b><b>Y</b><b>Z</b><b>#</b></div>
 	  		</div>
 	  	</div>
+      <div class="last">
+        <img src="/static/image/index/latent/art/ysjzpzj.png" alt="">
+      </div>
   	</div>
 </template>
 
@@ -295,12 +298,15 @@ export default {
 		font-size: 30px;
 	}
 	.star{
+		max-width: 700px;
+		width: 100%;
+
 		img{
-			width: 500px;
+			max-width: 700px;
+    		width: 100%;
 		}
 		span{
 			display: inline-block;
-			width: 480px;
 			font-size: 20px;
 			line-height: 40px;
 		}
@@ -315,17 +321,17 @@ export default {
 		}
 		input{
 			position: absolute;
-			left: 100px;
+			left: 80px;
 			top:20px;
-			width:300px;
+			width:230px;
 			height:30px;
-			border:none;
 			outline: none;
+			border:none;
 		}
 	}
 	.lang{
-		width: 480px;
-		height: 250px;
+		max-width: 700px;
+		width: 100%;
 		overflow-x:auto;
 		&>div{
 			width:1550px; 
@@ -342,8 +348,8 @@ export default {
 		}
 	}
 	.langactive{
-		width: 480px;
-		height:300px;
+		max-width: 700px;
+		width: 100%;
 		overflow-x:auto;
 		&>div{
 			width:1600px;
@@ -361,15 +367,21 @@ export default {
 		position: relative;
 		img{
 			width: 50px;
+			margin-left: 3px;
 		}
 		.ind{
+			width: 75%;
 			position: absolute;
 			top:0;
 			left:70px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 		}
 	}
 	.search{
-		width: 480px;
+		max-width: 700px;
+		width: 100%;
 		div{
 			display: flex;
 			margin-left:20px;
@@ -380,5 +392,12 @@ export default {
 			}
 		}
 	}
+    .last{
+        max-width: 700px;
+        width: 100%;
+        img{
+            width: 100%;
+        }
+    }
 }
 </style>

@@ -11,7 +11,7 @@
   		</div>
   		<div class="UnderCard">
   			<span>
-  				<router-link to="">
+  				<router-link to="/car">
 	  				<img src="/static/image/me/order.png" alt="">
 	  				<br>
 	  				<span>订单</span>
@@ -62,11 +62,11 @@
   			<router-link to="/index/suggest">
   				<span><img src="/static/image/me/suggest.png" alt=""><br><span>意见反馈</span></span>
   			</router-link>
-  			<router-link to="">
+  			<router-link to="/index/about">
   				<span><img src="/static/image/me/about.png" alt=""><br><span>关于我们</span></span>
   			</router-link>
   			<router-link to="">
-  				<span class="hid"><img src="/static/image/me/cars.png" alt=""><br><span></span></span>
+  				<span class="hid"><img src="/static/image/me/cars.png" alt=""><br><span>一行文字</span></span>
   			</router-link>
   		</div>
   	</div>
@@ -84,6 +84,10 @@ export default {
 		margin:0;
 		padding:0;
 	}
+	.MeWorld{
+		max-width: 700px;
+		width: 100%;
+	}
 	.UserName img{
 		vertical-align: middle;
 	}
@@ -92,6 +96,8 @@ export default {
 		font-size: 30px;
 	}
 	header{
+		max-width: 700px;
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		margin:20px 0;
@@ -101,9 +107,10 @@ export default {
 		}
 	}
 	.VIPCard{
-		width: 450px;
-		margin:90px auto 40px auto;
-		height: 270px;
+		max-width: 700px;
+		width: 100%;
+		margin:30px auto 40px auto;
+		// height: 55%;
 		box-shadow: 0px 0px 10px 2px #999;
 		border-radius: 5px;
 		text-align: center;
@@ -114,7 +121,7 @@ export default {
 	}
 	.cardbg{
 		background-image: url('/static/image/me/vipbg.png');
-		background-size: contain;
+		background-size: cover;
 		background-repeat: no-repeat;
 		color:#d1a46a;
 	}
@@ -130,14 +137,18 @@ export default {
 		font-size: 30px;
 	}
 	.UnderCard{
+		max-width: 700px;
+		width: 100%;
 		display: flex;
 		justify-content: space-around;
 		position: relative;
 		bottom:20px;
 	}
 	.other{
-		width: 500px;
+		max-width: 700px;
+		width: 100%;
 		text-align: center;
+		margin-bottom:50px;
 		a{
 			color:#333;
 			text-decoration: none;

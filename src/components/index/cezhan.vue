@@ -73,7 +73,8 @@ export default {
 <style scroped lang="less">
 .cezhan{
 	margin-top: 50px;
-		width:500px;
+	max-width: 700px;
+    width: 100%;
 	img{
 		width: 100%;
 	}

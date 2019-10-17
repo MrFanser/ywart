@@ -9,7 +9,7 @@
 	  	</div>
 	  	<div>
 	  		<h3>专业推荐</h3>
-	  		<div class="ind" v-for="(i,j) in items" :key="j">
+	  		<div class="ind vipdetail" v-for="(i,j) in items" :key="j">
 	  			<img :src="i.url" alt="">
 	  			<p><b>{{i.author}}</b></p><br>
 	  			<i>{{i.describe}}</i><br>
@@ -96,98 +96,119 @@ export default {
 	margin:0;
 	padding: 0;
 }
-h3{
-	text-align: center;
-}
-.only{ 
-	text-align: center;
-	img:first-child{
-		width: 500px;
-		height: 500px;
-	}
-}
-.btn{
-	width:250px;
-	height: 30px;
-	line-height: 30px;
-	background-color: #fff;
-	border-radius: 15px;
-	position: relative;
-	top:-100px;
-	margin: auto;
-	opacity: 0.7;
-	a{
-		text-decoration: none;
-		color: #333;
-	}
-}
-.lt{
-	transition: all 1s;
-	width:250px;
-	height: 30px;
-	line-height: 30px;
-	background-color: #fff;
-	border-radius: 15px;
-	position: fixed;
-	top:100px;
-	left: -20px;
-	margin: auto;
-	opacity: 0.7;
-	a{
-		text-decoration: none;
-		color: #333;
-	}
-}
-.ind{ 
-	>img{
-		margin: 30px 0;
-		}
-		div{
-			margin-top: 15px;
-			img{
-			position: relative;
-			top:5px;
-		} 
-	}
-}
-.more{
-	margin-top: 30px;
-	border-top: 1px solid #666;
-	h2{
-		margin: 30px 0;
-		color: #3c948b;
-	}
-	h1{
-		margin-bottom: 10px;
-	}
-	.duce{
+.recoment{
+	max-width: 700px;
+	width: 100%;
+	h3{
 		text-align: center;
-		font-weight: bold;
-		position: relative;
-		bottom:225px;
-		color:#fff;
-		span:nth-child(1){
-			font-size: 25px;
-		}
-		span:nth-child(4){
-			font-size: 25px;
-		}
-		span:nth-child(5){
-			font-size: 25px;
-		}
-		span{
-			display: inline-block;
-			width: 350px;
-			font-size: 15px;
+	}
+	.only{ 
+		text-align: center;
+		img:first-child{
+			max-width: 700px;
+			width: 100%;
+			height: 500px;
 		}
 	}
-	.noted{
+	.btn{
+		width:250px;
+		height: 30px;
+		line-height: 30px;
+		background-color: #fff;
+		border-radius: 15px;
 		position: relative;
-		bottom: 150px;
+		top:-100px;
+		margin: auto;
+		opacity: 0.7;
+		a{
+			text-decoration: none;
+			color: #333;
+		}
+	}
+	.lt{
+		transition: all 1s;
+		width:250px;
+		height: 30px;
+		line-height: 30px;
+		background-color: #fff;
+		border-radius: 15px;
+		position: fixed;
+		top:100px;
+		left: -20px;
+		margin: auto;
+		opacity: 0.7;
+		a{
+			text-decoration: none;
+			color: #333;
+		}
+	}
+	.ind{ 
+		>img{
+			margin: 30px 0;
+			}
+			div{
+				margin-top: 15px;
+				img{
+				position: relative;
+				top:5px;
+			} 
+		}
+	}
+	.more{
+		margin-top: 30px;
+		border-top: 1px solid #666;
+		h2{
+			margin: 30px 0;
+			color: #3c948b;
+		}
+		h1{
+			margin-bottom: 10px;
+		}
 		img{
-			width:500px;
+			max-width: 700px;
+			width: 100%;
+		}
+		.duce{
+			max-width: 700px;
+			width: 100%;
+			text-align: center;
+			font-weight: bold;
+			position: relative;
+			bottom:225px;
+			color:#fff;
+			span:nth-child(1){
+				font-size: 25px;
+			}
+			span:nth-child(4){
+				font-size: 25px;
+			}
+			span:nth-child(5){
+				font-size: 25px;
+			}
+			span{
+				display: inline-block;
+				width: 70%;
+				font-size: 15px;
+			}
+		}
+		.noted{
+			max-width: 700px;
+			width: 100%;
+			position: relative;
+			bottom: 150px;
+			img{
+
+				max-width: 700px;
+				width: 100%;
+			}
+		}
+	}
+	.vipdetail{
+		max-width: 700px;
+		width: 100%;
+		&>img{
+			width: 100%;
 		}
 	}
 }
-
 </style>

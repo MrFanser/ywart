@@ -67,10 +67,12 @@ export default {
 
 <style scroped lang="less">
 .about{
-	width: 500px;
+	max-width: 700px;
+	width: 100%;
 	margin:50px 0;
 	img{
-		width:500px;
+		max-width: 700px;
+		width: 100%;
 	}
 	.center{
 		text-align: center;
@@ -82,7 +84,7 @@ export default {
 		text-align: center;
 	}
 	span{
-		font-size: 20px;
+		font-size: 1.1em;
 		line-height: 30px;
 	}
 	.induce img{

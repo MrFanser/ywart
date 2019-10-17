@@ -1,7 +1,8 @@
 <template>
 	<div class="kindsBox">
 	  	<header>
-	  		<img class="headerKeFu" src="/static/image/index/public/index.png" alt=""><input type="text" placeholder="输入关键字搜索作品">
+	  		<img class="headerKeFu" src="/static/image/index/public/index.png" alt="" @click="goback">
+	  		<input type="text" placeholder="输入关键字搜索作品">
 	  	</header>
 	  	<div class="tagp">
 		  	<p class="tag">
@@ -43,7 +44,9 @@
 		  	</p>	
 	  	</div>
 	  	<div class="pb">
-	  		<vue-waterfall-easy :imgsArr="imgsArr" @click="clickFn"><span>123</span></vue-waterfall-easy>
+	  		<vue-waterfall-easy :imgsArr="imgsArr" @click="clickFn">
+	  			<span>123</span>
+	  		</vue-waterfall-easy>
 	  	</div>
     </div>
 </template>
@@ -54,7 +57,6 @@ export default {
 	data(){
 		return{
 			imgsArr: [],
-			// fetchImgsArr: [],
 			canShow:"",
 			id:"001",
 			fixedBox:"fixedBox",
@@ -72,7 +74,6 @@ export default {
 		handleScroll(){
 			let canShow;
 			let scrollTop = window.pageYOffset;
-			// console.log(scrollTop);
 			
 			if(scrollTop-122>0){
 				this.canShow=true;
@@ -92,7 +93,6 @@ export default {
 		clickFn(event,{index,value}){
 			event.preventDefault()
 			if(event.target.tagName.toLowerCase()=='img'){
-				console.log('img click',index,value);
 				this.$router.push({
 				  name:'Shopping',
 				  params:{
@@ -101,6 +101,9 @@ export default {
 				  }
 				})
 			}
+		},
+		goback(){
+			history.back()
 		}
 	},
 	created () {
@@ -115,21 +118,20 @@ export default {
 }
 </script>
 <style scroped>
-.img-wraper{
-	width: 245px;
-}
-.alink{
-	width: 245px;
-}
-.pb img{
-	width: 200px;
-}
+	.kindsBox{
+		max-width: 700px;
+		width: 100%;
+	}
 	.pb{
+		max-width: 700px;
+		width: 100%;
 		overflow:auto;
 		margin-top: 50px;
-		height: 2100px;
+		height: 1700px;
 	}
 	header{
+		max-width: 700px;
+		width: 100%;
 		position: fixed;
 		top: 0;
 		background-color: #fff;
@@ -141,7 +143,7 @@ export default {
 		margin: 0 10px;
 	}
 	[placeholder="输入关键字搜索作品"]{
-		width: 400px;
+		width: 70%;
 		vertical-align: middle;
 		height: 25px;
 		padding-left: 30px;
@@ -152,23 +154,24 @@ export default {
 		background-size: contain;
 	}
 	.kindsBox{
-		width: 500px;
+		max-width: 700px;
+		width: 100%;
 		text-align: left;
 	}
 	.tagp{
+		max-width: 700px;
+		width: 100%;
 		position: relative;
 		top: 40px;
 	}
 	.tag{
-		white-space: nowrap;
-		overflow:hidden;
 		margin: 10px;
 	}
 	.tag span{
-		margin: 0 3px;
+		font-size: 12px;
 	}
 	.headTag span{
-		padding: 10px;
+		padding: 5px 0;
 	}
 	.headTag{
 		display: flex;
@@ -181,19 +184,13 @@ export default {
 	.fixedBox{
 		position: fixed;
 		top: 10px;
-		width: 500px;
+		max-width: 700px;
+		width: 100%;
 	}
 	.headTagOther{
 		border-left: 1px solid #000;
 	}
 	.headTagOther img{
 		height: 15px;
-	}
-	.productBox{
-		width: 49%;
-		border: 1px solid red;
-	}
-	.productBox img{
-		width: 100%;
 	}
 </style>

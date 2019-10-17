@@ -5,21 +5,24 @@
   			<span>购买门票</span>
   		</header>	
   		<section>
-  			<h2>展览通票</h2>
+  			<h3>展览通票</h3>
   			<div class="bgcimg">
   				<span><b>正价票</b></span><br>
   				<span><b>￥38</b></span><br>
   				<span>将于2019年10月18日停售</span>
   			</div>
-  			<h2>购买方式</h2>
-  			<img src="/static/image/index/public/svg_file.svg" alt=""><p>支付宝支付</p>
-  			<h2>购票说明</h2>
+  			<div class="paymethod">
+	  			<h3>购买方式</h3>
+	  			<img src="/static/image/index/public/svg_file.svg" alt=""><p>支付宝支付</p>	
+  			</div>
+  			<div></div>
+  			<h3>购票说明</h3>
   			<ul>
-  				<li>1.本票为AITE线上艺术博览会2019 通票</li>
-  				<li>2.购买通票后，可于2019年10月31日前，不限次浏览线上艺博会所有作品。</li>
-  				<li>3.购买通票后，将与当前登录账号关联绑定。</li>
+  				<li>本票为AITE线上艺术博览会2019 通票</li>
+  				<li>购买通票后，可于2019年10月31日前，不限次浏览线上艺博会所有作品。</li>
+  				<li>购买通票后，将与当前登录账号关联绑定。</li>
   			</ul>
-  			<h2>常见问题</h2>
+  			<h3>常见问题</h3>
   			<div v-for="i in quest" class="questions">
   				<span>{{i.question}}</span><br>
   				<span>{{i.answer}}</span><br><br>
@@ -70,22 +73,35 @@ export default {
 
 <style scroped lang="less">
 .voide{
-	height: 500px;
+	max-width: 700px;
+	width: 100%;
 	.head{
+		height: 50px;
 		img{
 			height: 30px;
 			margin: 10px 0;
 		}
 		span{
+			width: 50%;
 			display: block;
 			font-weight: bold;
 			font-size: 25px;
 			position: relative;
 			top: -45px;
-			left: 170px;
+			left: 40px;
 		}
 	}
 	section{
+		// margin:50px auto 0 10px;
+		.paymethod{
+			margin-top:30px;
+			h3{
+				margin:30px 0;
+			}
+			p{
+				margin-top:15px;
+			}
+		}
 		.bgcimg{
 			width: 200px;
 			height: 120px;
@@ -95,7 +111,6 @@ export default {
 			position: relative;
 			text-align: center;
 			span{
-				border:1px solid red;
 				position: relative;
 			}
 			span:first-child{
@@ -114,30 +129,31 @@ export default {
 			position: relative;
 			bottom:45px;
 			left:50px;
+			width: 100px;
 		}
 		ul{
-			width: 300px;
-			list-style-type: none;
+			margin-left: -10px;
+			list-style-type: decimal;
 			position: relative;
 			li{
 				position: relative;
-				right:40px;
 			}
 		}
 		.questions{
-			width:450px;
+			width:90%;
 		}
 	}
 	.foot{
 		background-color: #fff;
 		display: flex;
-		width: 500px;
+		max-width: 700px;
+		width: 100%;
 		height: 50px;
 		border-top:1px solid #cccccc;
 		z-index:10;
 		position: relative;
 		p{
-			width:330px;
+			width:60%;
 			text-align: right;
 			margin-right:30px;
 			span{

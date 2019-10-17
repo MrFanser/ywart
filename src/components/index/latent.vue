@@ -22,7 +22,7 @@
 	  			</el-carousel-item>
 	  		</el-carousel>
 	  		<router-link to="">
-	  			<span>查看往期 <img src="/static/image/index/public/indexjt.png" alt=""></span>
+	  			<span>查看往期 </span>
 	  		</router-link>
 	  	</div>
 	  	<h3>最新上架</h3>
@@ -190,73 +190,88 @@ export default {
 	margin:0;
 	padding: 0;
 }
-h3{
-	text-align: center;
-}
-.only img:first-child{
-	width: 500px;
-	height: 500px;
-}
-.select a{
-	text-decoration: none;
-	color: #777;
-	display: block;
-	text-align: center;
-}
-.new{
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	.hot{
-		width: 45%;
-		img{
-			height: 150px;
-			width:100%;
-		}
-		div{
-			text-align: right;
-		}
+.latent{
+  max-width: 700px;
+  width: 100%;
+  h3{
+  	text-align: center;
+  }
+  .only img:first-child{
+  	max-width: 700px;
+    width: 100%;
+  	// height: 500px;
+  }
+  .block img{
+    width: 100%;
+    height: 80%;
+  }
+  .select{ 
+    img{
+      width: 100%;
+      height: 80%;
+    }
+    a{
+      text-decoration: none;
+      color: #777;
+      display: block;
+      text-align: center;
+  }
+  }
+  .new{
+  	display: flex;
+  	justify-content: space-between;
+  	flex-wrap: wrap;
+  	.hot{
+  		width: 45%;
+  		img{
+  			height: 150px;
+  			width:100%;
+  		}
+  		div{
+  			text-align: right;
+  		}
 
-	}
-}
-.oils{
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	.hot{
-		width: 45%;
-		img{
-			height: 150px;
-			width:100%;
-		}
-		div{
-			text-align: right;
-		}
+  	}
+  }
+  .oils{
+  	display: flex;
+  	justify-content: space-between;
+  	flex-wrap: wrap;
+  	.hot{
+  		width: 45%;
+  		img{
+  			height: 150px;
+  			width:100%;
+  		}
+  		div{
+  			text-align: right;
+  		}
 
-	}
-}
-.footer{
-	text-align: center;
-	margin-top: 50px;
-	img:first-child{
-		width:100px;
-		border-radius: 10px;
-		margin: 30px 0;
-	}
-	img:not(:first-child){
-		height: 40px;
-		margin-top: 30px;
-	}
-}
-.induce{
-	margin-bottom: 50px;
-	span{
-		font-size: 12px;
-		color:#777;
-	}
-}
-.links a{
-	text-decoration: none;
-	color: #777;
+  	}
+  }
+  .footer{
+  	text-align: center;
+  	margin-top: 50px;
+  	img:first-child{
+  		width:100px;
+  		border-radius: 10px;
+  		margin: 30px 0;
+  	}
+  	img:not(:first-child){
+  		height: 40px;
+  		margin-top: 30px;
+  	}
+  }
+  .induce{
+  	margin-bottom: 50px;
+  	span{
+  		font-size: 12px;
+  		color:#777;
+  	}
+  }
+  .links a{
+  	text-decoration: none;
+  	color: #777;
+  }
 }
 </style>

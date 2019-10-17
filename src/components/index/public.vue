@@ -119,13 +119,14 @@ export default {
 	margin-top:100px;
 	text-align: center;
 	.flexpub{
-		width: 500px;
+		max-width: 700px;
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		align-content: space-between;
 		flex-wrap: wrap;
 		div{
-			width: 240px;
+			width: 45%;
 			text-align: right;
 			margin: 20px 0;
 			img{

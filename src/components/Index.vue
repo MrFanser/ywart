@@ -30,7 +30,7 @@
                 </router-link>
             </div>
             <div class="box">
-                <router-link to="/me">
+                <router-link to="/index/singin">
                     <img src="/static/image/index/public/me.png" alt=""><br>
                     我   
                 </router-link>
@@ -52,17 +52,22 @@ export default {
     background-color: #eee;
 }
 .index{
-    width: 500px;
+    max-width: 700px;
+    min-width: 300px;
+    width: 100%;
     margin:auto;
 }
 footer{
     display: flex;
     position: fixed;
     bottom: 0;
-    width: 500px;
+    padding-top:10px;
+    max-width: 700px;
+    min-width: 300px;
+    width: 100%;
     text-align: center;
     background-color: #fff;
-    z-index: 1000000;
+    z-index: 1000;
 }
 .box{
     width: 20%;

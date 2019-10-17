@@ -4,13 +4,13 @@
             <div v-bind:class="isShow?hidden:search" class="slide">
                 <el-row :gutter="0">
                     <el-col :span="4">
-                        <img src="/static/image/index/public/headerKefu.png" alt="">
+                        <img class="hid" src="/static/image/index/public/headerKefu.png" alt="">
                     </el-col>
                     <el-col :span="16">
                         <input type="search" placeholder="输入关键字搜索作品">
                     </el-col>
                     <el-col :span="4">
-                        <img src="/static/image/index/public/znx.png" alt="">
+                        <img class="hid" src="/static/image/index/public/znx.png" alt="">
                     </el-col>
                 </el-row> 
             </div>
@@ -70,10 +70,14 @@ export default {
 }
 .slide{
     transition: all 1s;
+    .hid{
+        opacity: 0;
+    }
 }
 header{
     position: fixed;
-    width:500px;
+    max-width: 700px;
+    width: 100%;
     top:0px;
     text-align: center;
     z-index: 10000;
@@ -87,7 +91,7 @@ header{
         overflow: hidden;
     }
     input{
-        width: 80%;
+        width: 100%;
         height: 40px;
         margin: 8px auto;
     }
@@ -97,7 +101,7 @@ header{
         padding:10px 0;
         height: 25px;
         a{
-            font-size: 12px;
+            // font-size: 12px;
             color:#333;
             text-decoration: none;
             font-size: 15px;
