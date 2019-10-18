@@ -24,7 +24,7 @@
 				<img src="/static/image/index/public/art.jpg" alt="">
 				<img src="/static/image/index/public/ysjt.png" alt="">
 				<div class="aboutart">
-					<span><b>王加诺</b></span><br><br>
+					<span><b>王加诺</b></span><br>
 					<span>出生于中国沈阳 <br> 2010年考入英国伦敦艺术大学温布尔登学院 <br>2013年考入伦敦艺术大学切尔西学院攻读硕士学位</span>	
 				</div>
 			</div>
@@ -61,37 +61,22 @@
 				<img src="/static/image/index/latent/guan/guan4.jpg" alt="">
 				<span>艺术家个性签名。</span>
 			</div>
-			<div class="bgcroom">
-				<div class="tit">
-					<h3>场景展示</h3>
-					<span>SCENARIO SHOWS</span>	
-				</div>
-				<div class="room bgcroom1">
-					<img src="/static/image/index/latent/guan/guan1.jpg" alt="">
-				</div>
-				<div class="room bgcroom2">
-					<img src="/static/image/index/latent/guan/guan1.jpg" alt="">
-				</div>
-				<div class="room bgcroom3">
-					<img src="/static/image/index/latent/guan/guan1.jpg" alt="">
-				</div>
-			</div>
 			<div class="others tit">
 				<h3>其他细节展示</h3>
-				<span>OTHER DETAILS</span>
+				<span>OTHER DETAILS</span><br>
 				<img src="/static/image/index/latent/guan/qtxjzs.png" alt="">
 
 				<h3>购买须知</h3>
-				<span>PURCHASE NOTES</span>
+				<span>PURCHASE NOTES</span><br>
 				<img src="/static/image/index/latent/guan/gmxz.png" alt="">
 
 				<h3>艺网小贴士</h3>
-				<span>YWART TIPS</span>
+				<span>YWART TIPS</span><br>
 				<img src="/static/image/index/latent/guan/ywxtzsc.png" alt="">
 			</div>
 			<div class="tit">
 				<h3>推荐作品</h3>
-				<span>RECOMMEND</span>
+				<span>RECOMMEND</span><br>
 				<div class="picflex">
 					<div v-for="pic in picture">
 						<img :src="pic.url" alt="">
@@ -105,7 +90,7 @@
 			</div>
 		</section>
 	  	<div class="pay">
-	  		<div class="car"><router-link to="/car"><img src="/static/image/index/public/wcar.png" alt=""><br>购物车</router-link></div>
+	  		<div class="car"><router-link to="/car"><img src="/static/image/index/public/wcar.png" alt=""></router-link></div>
 	  		<div class="add" v-on:click="addcar"><h2>加入购物车</h2></div>
 	  		<div class="payst"><h2>立即购买</h2></div>
 	  	</div>
@@ -193,8 +178,13 @@ export default {
 </script>
 
 <style scroped lang="less">
+*{
+	margin:0;
+	padding:0;
+}
 .shopping{
-	width: 500px;
+	max-width: 700px;
+	width: 100%;
 	.header{
 		text-align: center;
 		img{
@@ -203,15 +193,14 @@ export default {
 	}
 	section{
 		width: 100%;
-		margin-left:25px;
 		.onlypic{
 			margin: auto;
 			img{
-				width:450px;
+				width:95%;
 			}
 		}
 		.induce{
-			margin:20px 25px;
+			margin:20px 0;
 			text-align: left;
 			font-size: 20px;
 			span:nth-child(3){
@@ -223,12 +212,12 @@ export default {
 			}
 		}
 		.coast{
-			margin:20px 25px;
+			margin:20px 0;
 		}
 		.about{
 			position: relative;
 			img{
-				width:200px;
+				width:40%;
 			}
 			img:nth-child(1){
 				box-shadow: -5px 5px 5px 0 #aeaeae;
@@ -237,21 +226,21 @@ export default {
 				position: absolute;
 			}
 			.aboutart{
-				width: 240px;
+				width: 50%;
 				position: absolute;
-				top:100px;
-				left: 250px;
+				top:30%;
+				left: 45%;
 			}
 		}
 		.message{
 			position: relative;
 			img{
-				width:200px;
+				width:50%;
 			}
 			.crowned{
 				position: absolute;
-				bottom:60px;
-				left: 225px;
+				bottom:10%;
+				left: 55%;
 			}
 		}
 		.tit{
@@ -260,68 +249,32 @@ export default {
 		}
 		.evaluate>span{
 			display: inline-block;
-			width: 450px;
+			width: 95%;
 			line-height: 35px;
 		}
 		.details{
-			width: 450px;
+			max-width: 700px;
+			width: 100%;
 			img{
-				width:450px;
+				width:100%;
 			}
 			>span{
 				display: block;
 				margin:20px auto;
 			}
 		}
-		.bgcroom{
-			img{
-				width: 100px;
-				height: 100px;
-				position: absolute;
-			}
-			.room{
-				width: 450px;
-				height: 255px;
-				background-size: contain;
-				background-repeat: no-repeat;
-				margin:10px 0;
-				position: relative;
-			}
-			.bgcroom1{
-				background-image: url('/static/image/index/latent/guan/guan5.jpg');
-				img{
-					top:50px;
-					left: 250px;
-				}
-			}
-			.bgcroom2{
-				background-image: url('/static/image/index/latent/guan/guan6.jpg');
-				img{
-					top:50px;
-					left: 190px;
-				}
-			}
-			.bgcroom3{
-				background-image: url('/static/image/index/latent/guan/guan7.jpg');
-				img{
-					top:50px;
-					left: 120px;
-				}
-			}
-		}
 		.others img{
-			width: 440px;
-			margin-right: 30px;
+			width: 100%;
 		}
 		.picflex{
-			width: 500px;
+			max-width: 700px;
+			width: 100%;
 			display: flex;
 			justify-content: space-around;
 			align-content: space-around;
 			flex-wrap: wrap;
-			margin-left: -20px;
 			div{
-				width: 200px;
+				width: 40%;
 				text-align: right;
 				img{
 					width: 100%;
@@ -329,15 +282,19 @@ export default {
 			}
 		}
 		.botm{
+			max-width: 700px;
+			width: 100%;
 			background-color: #eeeeee;
 			text-align: center;
-			margin: 0 -35px 80px -35px;
+			margin: 0 auto 80px auto;
 			height: 50px;
 			line-height: 50px;
 		}
 	}
 		.pay{
+			max-width: 700px;
 			width: 100%;
+			height:6%;
 			position: fixed;
 			z-index:10;
 			bottom:0;
@@ -348,11 +305,11 @@ export default {
 				width: 80px;
 			}
 			.add{
-				width: 270px;
+				width: 54%;
 				color:#333333;
 			}
 			.payst{
-				width: 150px;
+				width: 30%;
 				background-color: #ee403c;
 				h2{
 					color:#fff;

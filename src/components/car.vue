@@ -103,13 +103,6 @@ export default {
 			history.back()
 		}
 	},
-	watch:{
-		checkPro:function(newValue){
-			this.checkPro=newValue;
-			console.log(this.checkPro);
-		}
-		
-	},
 	mounted:function(){
 		let asd=localStorage.getItem("crowned");
 		console.log(asd);

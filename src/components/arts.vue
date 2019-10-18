@@ -1,6 +1,9 @@
 <template>
   	<div class="arts">
-	  	<div class="head"><img src="/static/image/index/public/ss.png" alt=""><input type="text" placeholder="搜索艺术家"></div>
+	  	<div class="head">
+            <img src="/static/image/index/public/ss.png" alt="">
+            <input type="text" placeholder="搜索艺术家">
+        </div>
 	  	<div class="star">
 	  		<p>艺网之星</p>
 	  		<img src="/static/image/art/1.jpg" alt=""><br>
@@ -300,7 +303,6 @@ export default {
 	.star{
 		max-width: 700px;
 		width: 100%;
-
 		img{
 			max-width: 700px;
     		width: 100%;
@@ -315,7 +317,9 @@ export default {
 		height: 70px;
 		position: relative;
 		img{
-			margin-top: 10px;
+            width: 25px;
+            height: 25px;
+			margin-top: 20px;
 			position: absolute;
 			left:20px;
 		}

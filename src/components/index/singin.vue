@@ -1,6 +1,5 @@
 <template>
-	<div>
-		<!-- <div class="fanhui" @click="goback"><img src="/static/image/index/public/back.png" alt=""></div> -->
+	<div class="singin">
 	    <form action="">
 			<el-tabs v-model="activeName" @tab-click="handleClick">
 		    	<el-tab-pane label="账号登录" name="second">
@@ -112,6 +111,11 @@
 input{
 	outline:none;
 	border:none;
+}
+.singin{
+	margin:auto;
+	max-width: 700px;
+	width: 100%;
 }
 .tel,.pwd{
 	margin:30px 0;

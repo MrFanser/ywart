@@ -1,7 +1,7 @@
 <template>
   <div class="sg">
   	<header>
-  		<span>&lt;</span>
+  		<span @click="goback">&lt;</span>
   		<span>意见反馈</span>
   		<span class="hid">&gt;</span>
   	</header>
@@ -22,23 +22,33 @@
 
 <script>
 export default {
-  
+  	data(){
+  		
+  	},
+  	methods:{
+  		goback(){
+  			history.back()
+  		}
+  	}
 }
 </script>
 <style scoped>
 	*{
 		margin:0;
-		padding: 0; 
+		padding: 0;
 	}
 	.hid{
 		visibility: hidden;
 	}
 	.sg{
-		width: 500px;
+		max-width: 700px;
+		width: 100%;
+		margin:auto;
 		background-color: #eee;
 	}
 	header{
-		width: 500px;
+		max-width: 700px;
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		background-color: #fff;
@@ -51,18 +61,18 @@ export default {
 		text-align: center;
 	}
 	.phoneNum input{
-		width: 450px;
+		width: 95%;
 		height: 30px;
 	}
 	.sgArea{
 		text-align: center;
 	}
 	.sgArea textarea{
+		resize: none;
 		margin: auto;
-		width: 450px;
-		max-width: 450px;
-		height: 100px;
-		max-height: 100px;
+		width: 90%;
+		/*height: 100px;*/
+		/*max-height: 100px;*/
 	}
 	.ps{
 		margin: 10px 25px;
@@ -73,7 +83,7 @@ export default {
 		text-align: center;
 	}
 	[value="提交反馈"]{
-		width: 450px;
+		width: 90%;
 		background-color: #000;
 		color: #fff;
 		padding: 10px;

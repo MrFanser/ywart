@@ -51,7 +51,8 @@ export default {
 		resize:none;
 	}
 	.local{
-		width: 500px;
+		max-width: 700px;
+		width:100%;
 		background: #eee;
 	}
 	header{
@@ -61,7 +62,7 @@ export default {
 		background-color: #fff;
 	}
 	.OwnMsg{
-		width: 450px;
+		width: 90%;
 		margin: auto;
 		background-color: #fff;
 	}
@@ -70,14 +71,14 @@ export default {
 		width: 50px;
 	}
 	.OwnMsg input{
-		width: 390px;
+		width: 60%;
 		border: none;
 	}
 	textarea{
 		margin-top: 30px;
-		width: 500px;
-		max-width: 500px;s
-		max-height: 200px;
+		max-width: 700px;
+		width:100%;
+		/*max-height: 200px;*/
 	}
 	footer{
 		background-attachment: fixed;

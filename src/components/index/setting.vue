@@ -98,7 +98,7 @@
                 </li>
             </ol>
       </section>
-      <p class="logOut"><span>退出登录</span></p>
+      <!-- <p class="logOut"><span>退出登录</span></p> -->
     </div>
 </template>
 
@@ -294,21 +294,16 @@ export default {
         transition: all 1s;
     }
     .setting{
+        margin:auto;
+        max-width: 700px;
+        width: 100%;
         background-color: #eee;
     }
     header{
         background-color: #fff;
     }
-    header,li,.logOut{
+    header,li{
         display: flex;
         justify-content: space-between;
-    }
-    .logOut{
-        color: red;
-        text-align: center;
-        background-color: #fff;
-    }
-    .logOut span{
-        margin: auto;
     }
 </style>

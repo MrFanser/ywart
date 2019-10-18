@@ -79,13 +79,15 @@ export default {
 		font-weight: bold;
 	}
 	.pointWorld{
-		width: 500px;
+		max-width: 700px;
+		width:100%;
 		background-color: #bbb;
 	}
 	header{
 		display: flex;
 		justify-content: space-between;
-		width: 500px;
+		max-width: 700px;
+		width:100%;
 		height: 30px;
 		line-height: 30px;
 		background-color: #fff;

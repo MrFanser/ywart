@@ -28,6 +28,10 @@ import About from '@/components/index/about'
 import Shopping from '@/components/index/shopping'
 import Voide from '@/components/index/voide'
 import Singin from '@/components/index/singin'
+import BrowsingHistory from '@/components/index/BrowsingHistory'
+import MyArt from '@/components/index/MyArt'
+import SystemMsg from '@/components/index/SystemMsg'
+import coupon from '@/components/index/coupon'
 
 Vue.use(Router)
 
@@ -182,6 +186,31 @@ export default new Router({
     	path:'/index/singin',
      	name:'Singin',
     	component:Singin
-    }
+    },
+    {
+    	path:'/index/BrowsingHistory',
+    	name:'BrowsingHistory',
+    	component:BrowsingHistory
+    },
+    {
+    	path:'/index/MyArt',
+    	name:'MyArt',
+    	component:MyArt
+    },
+    {
+    	path:'/index/SystemMsg',
+    	name:'SystemMsg',
+    	component:SystemMsg
+    },
+    {
+    	path:'/index/coupon',
+    	name:'coupon',
+    	component:coupon
+    },
+    // {
+    // 	path:'/index/coupon',
+    // 	name:'coupon',
+    // 	component:coupon
+    // }
   ]
 })

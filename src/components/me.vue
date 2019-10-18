@@ -18,37 +18,37 @@
   				</router-link>
   			</span>
   			<span>
-  				<router-link to="">
+  				<router-link to="/index/BrowsingHistory">
 	  				<img src="/static/image/me/history.png" alt="">
 	  				<br>
 	  				<span>历史浏览</span>	
   				</router-link>
   			</span>
   			<span>
-  				<router-link to="">
+  				<router-link to="/index/SystemMsg">
 	  				<img src="/static/image/me/message.png" alt="">
 	  				<br>
 	  				<span>消息</span>
 	  			</router-link>
   			</span>
-  			<span>
+  			<span @click="openService">
   				<router-link to="">
 	  				<img src="/static/image/me/service.png" alt="">
 	  				<br>
-	  				<span>客服</span>
+	  				<span >客服</span>
 	  			</router-link>
   			</span>
   		</div>
   	</section>
   	<div class="other">
   		<div>
-  			<router-link to="">
+  			<router-link to="/index/MyArt">
   				<span><img src="/static/image/me/mygoods.png" alt=""><br><span>我的艺术品</span></span>
   			</router-link>
   			<router-link to="">
   				<span><img src="/static/image/me/heart.png" alt=""><br><span>我喜欢的</span></span>
   			</router-link>
-  			<router-link to="">
+  			<router-link to="/index/coupon">
   				<span><img src="/static/image/me/voucher.png" alt=""><br><span>优惠券</span></span>
   			</router-link>
   			<router-link to="index/shop">
@@ -71,12 +71,46 @@
   		</div>
   	</div>
   	<router-view/>
+  	<div class="service" :class="CanShow?classShow:classHid">
+  		<div class="serviceTit">
+  			<span class="IntimateLittleHousekeeper">艺网贴心小管家</span>
+  			<span @click="closer">关闭</span>
+  		</div>
+  		<div>
+  			<span class="hisMsg">加载更多历史消息</span>
+  			<div>
+  				<img src="../../static/image/me/photo.png" class="gugugu">
+  				<span class="Reply">我是艺网贴心小管家，有什么可以帮您？
+  					<ol>
+  						<li>可以开发票吗</li>
+  						<li>作品定价</li>
+  						<li>发货时间问题？</li>
+  						<li>物流时间问题？</li>
+  					</ol>
+  				</span>
+  			</div>
+  		</div>
+  	</div>
   </div>
 </template>
 
 <script>
 export default {
-  
+	data(){
+  		return{
+  			CanShow:false,
+  			classShow:"show",
+  			classHid:"hidden"
+  		}
+  	},
+  	methods:{
+  		openService(){
+  			this.CanShow=true;
+  		},
+  		closer(){
+  			this.CanShow=false;
+  		}
+  	}
 }
 </script>
 <style scroped lang="less">
@@ -173,5 +207,53 @@ export default {
 	}
 	.hid{
 		visibility: hidden;
+	}
+	.service{
+		width: 100%;
+		height: 90vh;
+		position: absolute;
+		bottom: 0px;
+		left: 0;
+		z-index: 1;
+		background-color: #fff;
+	}
+	.serviceTit{
+		display: flex;
+		justify-content: space-between;
+		padding: 13px;
+		color: #fff;
+		background-color: #3c948b;
+	}
+	.show{
+		display: block;
+	}
+	.hidden{
+		display: none;
+	}
+	.hisMsg{
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		color: #999;
+	}
+	.Reply{
+		float: left;
+		padding: 10px;
+	}
+	.question{
+		float: right;
+		background-color: #3c948b;
+		color: #fff;
+		padding: 10px;
+	}
+	ol,li{
+		margin-left: 10px;
+		color: #6088e6;
+
+	}
+	.gugugu{
+		height: 40px;
+		float: left;
+		margin: 3px;
 	}
 </style>
