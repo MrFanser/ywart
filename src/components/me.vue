@@ -121,6 +121,7 @@ export default {
 	.MeWorld{
 		max-width: 700px;
 		width: 100%;
+		// margin:auto;
 	}
 	.UserName img{
 		vertical-align: middle;
@@ -209,11 +210,13 @@ export default {
 		visibility: hidden;
 	}
 	.service{
+		max-width: 700px;
+		margin:auto;
 		width: 100%;
 		height: 90vh;
 		position: absolute;
 		bottom: 0px;
-		left: 0;
+		// left: 0;
 		z-index: 1;
 		background-color: #fff;
 	}
