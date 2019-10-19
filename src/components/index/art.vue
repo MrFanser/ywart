@@ -393,10 +393,7 @@ export default {
   	methods: {
   		handleClick(tab, event) {
         console.log(tab, event);
-  	    },
-  	  //   pay(n){
-    	// 	this.tit = n
-    	// }
+  	    }
   	}
 }
 </script>
@@ -420,7 +417,6 @@ export default {
 			text-decoration: none;
 			padding: 10px 0px;
 			color:#333;
-			background-color: #eeeeee;
 		}
 		.jump{
 			text-align: center;

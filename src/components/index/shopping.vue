@@ -3,7 +3,7 @@
 		<div class="header">
 			<el-row>
 			  	<el-col :span="4"><div class="grid-content bg-purple-dark"><img src="/static/image/index/public/back.png" alt="" @click="goback"></div></el-col>
-			  	<el-col :span="16"><div class="grid-content bg-purple-dark"><h2>加冕</h2></div></el-col>
+			  	<el-col :span="16"><div class="grid-content bg-purple-dark"><h3>加冕</h3></div></el-col>
 			  	<el-col :span="4"><div class="grid-content bg-purple-dark"><img src="/static/image/index/public/kefu.png" alt=""></div></el-col>
 			</el-row>
 		</div>
@@ -91,8 +91,8 @@
 		</section>
 	  	<div class="pay">
 	  		<div class="car"><router-link to="/car"><img src="/static/image/index/public/wcar.png" alt=""></router-link></div>
-	  		<div class="add" v-on:click="addcar"><h2>加入购物车</h2></div>
-	  		<div class="payst"><h2>立即购买</h2></div>
+	  		<div class="add" v-on:click="addcar"><h3>加入购物车</h3></div>
+	  		<div class="payst"><h3>立即购买</h3></div>
 	  	</div>
   	</div>
 </template>
@@ -163,6 +163,7 @@ export default {
   			history.back()
   		},
   		addcar:function(){
+  			alert("成功添加到购物车");
   			if(localStorage.getItem("crowned")){
   				var temparr = localStorage.getItem("crowned");
   				var tempJson = JSON.parse(temparr);
@@ -187,16 +188,18 @@ export default {
 	width: 100%;
 	.header{
 		text-align: center;
+		margin-top:5px;
 		img{
-			margin-top:15px;
+			width: 30px;
 		}
 	}
 	section{
+		margin: auto;
 		width: 100%;
 		.onlypic{
 			margin: auto;
 			img{
-				width:95%;
+				width:100%;
 			}
 		}
 		.induce{
@@ -284,17 +287,19 @@ export default {
 		.botm{
 			max-width: 700px;
 			width: 100%;
-			background-color: #eeeeee;
 			text-align: center;
 			margin: 0 auto 80px auto;
 			height: 50px;
 			line-height: 50px;
+			background-color: #eeeeee;
 		}
 	}
 		.pay{
+			line-height: 40px;
+			font-size: 13px;
 			max-width: 700px;
 			width: 100%;
-			height:6%;
+			height:40px;
 			position: fixed;
 			z-index:10;
 			bottom:0;
@@ -311,7 +316,7 @@ export default {
 			.payst{
 				width: 30%;
 				background-color: #ee403c;
-				h2{
+				h3{
 					color:#fff;
 				}
 			}

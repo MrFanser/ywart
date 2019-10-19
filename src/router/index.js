@@ -32,6 +32,10 @@ import BrowsingHistory from '@/components/index/BrowsingHistory'
 import MyArt from '@/components/index/MyArt'
 import SystemMsg from '@/components/index/SystemMsg'
 import coupon from '@/components/index/coupon'
+import collect from '@/components/index/collect'
+import A from '@/components/index/A'
+import B from '@/components/index/B'
+import C from '@/components/index/C'
 
 Vue.use(Router)
 
@@ -78,7 +82,60 @@ export default new Router({
      		{
      		 	path:'/arts',
      		 	name:'Arts',
-     		 	component:Arts
+     		 	component:Arts,
+     		 	children:[
+	     		 	{
+	     		 		path:"/index/A",
+	     		 		name:'A',
+	     		 		component:A
+	     		 	},
+	     		 	{
+	     		 		path:"/index/B",
+	     		 		name:'B',
+	     		 		component:B
+	     		 	},
+	     		 	{
+	     		 		path:"/index/C",
+	     		 		name:'C',
+	     		 		component:C
+	     		 	},
+	     		 	// {
+	     		 	// 	path:"/index/A",
+	     		 	// 	name:'D',
+	     		 	// 	component:A
+	     		 	// },
+	     		 	// {
+	     		 	// 	path:"/index/A",
+	     		 	// 	name:'E',
+	     		 	// 	component:A
+	     		 	// },
+	     		 	// {
+	     		 	// 	path:"/index/A",
+	     		 	// 	name:'F',
+	     		 	// 	component:A
+	     		 	// },
+	     		 	// {
+	     		 	// 	path:"/index/A",
+	     		 	// 	name:'G',
+	     		 	// 	component:A
+	     		 	// },
+	     		 	// {
+	     		 	// 	path:"/index/A",
+	     		 	// 	name:'H',
+	     		 	// 	component:A
+	     		 	// },
+	     		 	// {
+	     		 	// 	path:"/index/A",
+	     		 	// 	name:'I',
+	     		 	// 	component:A
+	     		 	// },
+	     		 	// {
+	     		 	// 	path:"/index/A",
+	     		 	// 	name:'J',
+	     		 	// 	component:A
+	     		 	// },
+     		 	],
+     		 	redirect:'/index/A'
      		},
      		{
      		 	path:'/car',
@@ -207,10 +264,10 @@ export default new Router({
     	name:'coupon',
     	component:coupon
     },
-    // {
-    // 	path:'/index/coupon',
-    // 	name:'coupon',
-    // 	component:coupon
-    // }
+    {
+    	path:'/index/collect',
+    	name:'collect',
+    	component:collect
+    }
   ]
 })

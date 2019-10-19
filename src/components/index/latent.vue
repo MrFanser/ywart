@@ -7,16 +7,19 @@
 	  		<h3>今日推荐</h3>
 	  		<div class="block">
 	  		  	<span class="demonstration"></span>
-	  		  	<el-carousel height="500px">
+	  		  	<el-carousel height="300px">
 	  		  		<el-carousel-item v-for="(i,g) in item" :key="g">
 	  		  		    <img :src="i" alt="">
 	  		  		</el-carousel-item>
 	  		  	</el-carousel>
 	  		</div>
 	  	</div>
+
+      <div class="dividing"></div>
+
 	  	<div class="select">
 	  		<h3>专题精选</h3>
-	  		<el-carousel height="500px">
+	  		<el-carousel height="300px">
 	  			<el-carousel-item v-for="(i,g) in items" :key="g">
 	  			    <img :src="i" alt="">
 	  			</el-carousel-item>
@@ -25,6 +28,9 @@
 	  			<span>查看往期 </span>
 	  		</router-link>
 	  	</div>
+
+      <div class="dividing"></div>
+
 	  	<h3>最新上架</h3>
 	  	<div class="new">
 	  		<div class="hot" v-for="(i,j) in goods" :key="j">
@@ -35,6 +41,9 @@
 	  			</div>
 	  		</div>
 	  	</div>
+
+      <div class="dividing"></div>
+
 	  	<h3>油画/OILS</h3>
 	  	<div class="oils">
 	  		<div class="hot" v-for="(i,j) in good" :key="j">
@@ -45,6 +54,9 @@
 	  			</div>
 	  		</div>
 	  	</div>
+
+      <div class="dividing"></div>
+
   	  	<div class="footer">
   	  		<img src="/static/image/index/public/appicon.png" alt="">
   	  		<h3>有艺网，你的APP圈更具艺术范儿</h3>
@@ -195,20 +207,19 @@ export default {
   width: 100%;
   h3{
   	text-align: center;
+    margin:20px auto;
   }
   .only img:first-child{
   	max-width: 700px;
     width: 100%;
-  	// height: 500px;
   }
   .block img{
     width: 100%;
-    height: 80%;
   }
   .select{ 
     img{
       width: 100%;
-      height: 80%;
+      height: 100%;
     }
     a{
       text-decoration: none;
@@ -263,7 +274,7 @@ export default {
   	}
   }
   .induce{
-  	margin-bottom: 50px;
+  	margin-bottom: 100px;
   	span{
   		font-size: 12px;
   		color:#777;
@@ -272,6 +283,13 @@ export default {
   .links a{
   	text-decoration: none;
   	color: #777;
+  }
+  .dividing{
+    margin: 30px 0;
+    width: 100%;
+    height: 10px;
+    background-color: #eeeeee;
+    // background-color: red;
   }
 }
 </style>

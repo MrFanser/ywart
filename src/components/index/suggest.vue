@@ -44,7 +44,7 @@ export default {
 		max-width: 700px;
 		width: 100%;
 		margin:auto;
-		background-color: #eee;
+		/*background-color: #eee;*/
 	}
 	header{
 		max-width: 700px;

@@ -21,7 +21,7 @@
 				</div>
 			</div>
 	  	</div>
-	  		<p>往期艺网之星</p>
+	  	<p>往期艺网之星</p>
 	  	<div class="human" v-for="(item,i) in imgs" :key="i">
 	  		<img :src="item.path" alt="">
 	  		<div class="ind">
@@ -41,14 +41,47 @@
 	  	<div class="artsearch">
 	  		<p>艺术家索引</p>
 	  		<div class="search">
-	  			<div><b>A</b><b>B</b><b>C</b><b>D</b><b>E</b><b>F</b><b>G</b><b>H</b><b>I</b><b>J</b></div>
-	  			<div><b>K</b><b>L</b><b>M</b><b>N</b><b>O</b><b>P</b><b>Q</b><b>R</b><b>S</b><b>T</b></div>
-	  			<div><b>U</b><b>V</b><b>W</b><b>X</b><b>Y</b><b>Z</b><b>#</b></div>
+	  			<div>
+                    <router-link to="/index/A"><b>A</b></router-link>
+                    <router-link to="/index/B"><b>B</b></router-link>
+                    <router-link to="/index/C"><b>C</b></router-link>
+                    <router-link to=""><b>D</b></router-link>
+                    <router-link to=""><b>E</b></router-link>
+                    <router-link to=""><b>F</b></router-link>
+                    <router-link to=""><b>G</b></router-link>
+                    <router-link to=""><b>H</b></router-link>
+                    <router-link to=""><b>I</b></router-link>
+                    <router-link to=""><b>J</b></router-link>
+                </div>
+	  			<div>
+                    <router-link to=""><b>K</b></router-link>
+                    <router-link to=""><b>L</b></router-link>
+                    <router-link to=""><b>M</b></router-link>
+                    <router-link to=""><b>N</b></router-link>
+                    <router-link to=""><b>O</b></router-link>
+                    <router-link to=""><b>P</b></router-link>
+                    <router-link to=""><b>Q</b></router-link>
+                    <router-link to=""><b>R</b></router-link>
+                    <router-link to=""><b>S</b></router-link>
+                    <router-link to=""><b>T</b></router-link>
+                </div>
+	  			<div>
+                    <router-link to=""><b>U</b></router-link>
+                    <router-link to=""><b>V</b></router-link>
+                    <router-link to=""><b>W</b></router-link>
+                    <router-link to=""><b>X</b></router-link>
+                    <router-link to=""><b>Y</b></router-link>
+                    <router-link to=""><b>Z</b></router-link>
+                    <router-link to=""><b>#</b></router-link>
+                </div>
 	  		</div>
-	  	</div>
-      <div class="last">
-        <img src="/static/image/index/latent/art/ysjzpzj.png" alt="">
-      </div>
+        </div>
+        <div class="view">
+            <router-view/>
+        </div>
+        <div class="last">
+            <router-link to="/index/collect"><img src="/static/image/index/latent/art/ysjzpzj.png" alt=""></router-link>
+        </div>
   	</div>
 </template>
 
@@ -338,15 +371,15 @@ export default {
 		width: 100%;
 		overflow-x:auto;
 		&>div{
-			width:1550px; 
+			width:1000px; 
 			div{
 				display: inline-block;
-				width:150px;
-				height: 220px;
+				width:100px;
+				height: 150px;
 				text-align: right;
-				margin:  0 10px;
+				margin:  0 5px;
 				img{
-					width: 150px;
+					width: 100%;
 				}
 			}
 		}
@@ -356,13 +389,13 @@ export default {
 		width: 100%;
 		overflow-x:auto;
 		&>div{
-			width:1600px;
+			width:1350px;
 			div{
 				display: inline-block;
-				width:300px;
+				width:250px;
 				margin:  0 10px;
 				img{
-					width: 300px;
+					width: 250px;
 				}
 			}
 		}
@@ -389,10 +422,12 @@ export default {
 		div{
 			display: flex;
 			margin-left:20px;
-			b{
+			a{
 				display: block;
 				width: 10%;
 				margin:10px 0;
+                color:#333;
+                text-decoration: none;
 			}
 		}
 	}

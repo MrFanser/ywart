@@ -26,12 +26,12 @@
 	  		<img src="/static/image/index/literary/6.jpg" alt="">
 	  		<div class="duce">
 	  			<span>艺网数字美术馆 首展</span><br>
-	  			<span>YWART VIRTUAL MUSEUM FIRST SHOW</span><br><br>
+	  			<span>YWART VIRTUAL MUSEUM FIRST SHOW</span><br>
 
 	  			<span>無間</span><br>
-	  			<span>UNLIMITED</span><br><br>
+	  			<span>UNLIMITED</span><br>
 
-	  			<span>参展艺术家</span><br><br>
+	  			<span>参展艺术家</span><br>
 
 	  			<span>艾妮莎 蔡磊 付豫 董鹤 牟昱桥  马文婷 马灵丽 李昌龙 李宝荀 罗荃木 张庸 普鹏 张洪立 张琳 钟飙 </span>
 	  		</div>
@@ -107,7 +107,7 @@ export default {
 		img:first-child{
 			max-width: 700px;
 			width: 100%;
-			height: 500px;
+			height: 50%;
 		}
 	}
 	.btn{
@@ -174,28 +174,28 @@ export default {
 			text-align: center;
 			font-weight: bold;
 			position: relative;
-			bottom:225px;
+			bottom:200px;
 			color:#fff;
 			span:nth-child(1){
-				font-size: 25px;
+				font-size: 20px;
 			}
 			span:nth-child(4){
-				font-size: 25px;
+				font-size: 20px;
 			}
 			span:nth-child(5){
-				font-size: 25px;
+				font-size: 20px;
 			}
 			span{
 				display: inline-block;
 				width: 70%;
-				font-size: 15px;
+				font-size: 13px;
 			}
 		}
 		.noted{
 			max-width: 700px;
 			width: 100%;
 			position: relative;
-			bottom: 150px;
+			bottom: 100px;
 			img{
 
 				max-width: 700px;

@@ -33,10 +33,10 @@
 		  		<span @click="pricethirdActived" :class="{'Actived':pricethirdIsActived}">&yen;8,000以上</span>
 		  	</p>
 			<p class="headTag" v-bind:class="canShow?fixedBox:floatBox">
-		  		<span>综合排序</span>
-		  		<span>最新上架</span>
-		  		<span>热度排序</span>
-		  		<span>价格排序</span>
+		  		<span @click="IntegratedSort" :class="{'tagActived':isIntegratedSortActived}">综合排序</span>
+		  		<span @click="newPro" :class="{'tagActived':isNewProActived}">最新上架</span>
+		  		<span @click="HotPro" :class="{'tagActived':isHotProActived}">热度排序</span>
+		  		<span @click="pricePro" :class="{'tagActived':isPriceProActived}">价格排序</span>
 		  	</p>	
 	  	</div>
 	  	<div class="pb">
@@ -73,6 +73,12 @@ export default {
 			priceFirstIsActived:false,
 			pricesecondIsActived:false,
 			pricethirdIsActived:false,
+
+			isIntegratedSortActived:false,
+			isNewProActived:false,
+			isHotProActived:false,
+			isPriceProActived:false,
+
 			imgsArr: [],
 			canShow:"",
 			id:"001",
@@ -256,6 +262,30 @@ export default {
 			this.pricesecondIsActived=false;
 			this.pricethirdIsActived=true;
 		},
+		IntegratedSort(){
+			this.isIntegratedSortActived=true;
+			this.isNewProActived=false;
+			this.isHotProActived=false;
+			this.isPriceProActived=false;
+		},
+		newPro(){
+			this.isIntegratedSortActived=false;
+			this.isNewProActived=true;
+			this.isHotProActived=false;
+			this.isPriceProActived=false;
+		},
+		HotPro(){
+			this.isIntegratedSortActived=false;
+			this.isNewProActived=false;
+			this.isHotProActived=true;
+			this.isPriceProActived=false;
+		},
+		pricePro(){
+			this.isIntegratedSortActived=false;
+			this.isNewProActived=false;
+			this.isHotProActived=false;
+			this.isPriceProActived=true;
+		},
 		handleScroll(){
 			let canShow;
 			let scrollTop = window.pageYOffset;
@@ -322,9 +352,9 @@ export default {
 		max-width: 700px;
 		width: 100%;
 		position: fixed;
-		top: 0;
+		top: 0px;
 		background-color: #fff;
-		z-index: 100;
+		z-index: 5;
 	}
 	.headerKeFu{
 		vertical-align: middle;
@@ -337,7 +367,7 @@ export default {
 		height: 25px;
 		padding-left: 30px;
 		border: none;
-		background-color: #eee;
+		/*background-color: #eee;*/
 		background-image: url(../../static/image/index/public/ss.png);
 		background-repeat: no-repeat;
 		background-size: contain;
@@ -376,7 +406,7 @@ export default {
 	}
 	.fixedBox{
 		position: fixed;
-		top: 10px;
+		top: 30px;
 		max-width: 700px;
 		width: 100%;
 	}
@@ -389,5 +419,8 @@ export default {
 	.Actived{
 		background-color: #000;
 		color: #fff;
+	}
+	.tagActived{
+		font-weight: bold;
 	}
 </style>

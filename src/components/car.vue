@@ -3,7 +3,7 @@
 	  	<header>
 	  		<span @click="goback"><img src="/static/image/index/public/back.png" alt=""></span>
 	  		<span>购物车</span>
-	  		<span class="hid">1</span>
+	  		<span class="hid"><img src="/static/image/index/public/back.png" alt=""></span>
 	  	</header>
 	  	<div class="sumNum">
 	  		<p><span>购物车</span><span>{{shoppingList.length}}</span></p>
@@ -38,7 +38,7 @@
 	  		</div>
 	  	</div>
 	  	<div class="footer">
-	  		<span>
+	  		<span class="hid">
 	  			<span><input type="checkbox">全选</span>
 	  			<span>移除</span>
 	  		</span>
@@ -132,6 +132,7 @@ export default {
 	header{
 		background-color: #fff;
 		display: flex;
+		justify-content: space-between;
 		height: 30px;
 		font-size: 20px;
 	}
@@ -154,14 +155,14 @@ export default {
 	}
 	.shoppingPro input{
 		vertical-align: middle;
-		width: 100px;
-		height: 45px;
+		width: 90px;
+		height: 30px;
 		position: relative;
-		left: 20%;
+		left: 30%;
 		border:none;
 		background-color: #ff4201;
 		color: #fff;
-		font-size: 20px;
+		font-size: 15px;
 		border-radius:5px;
 	}
 	.shoppingPro img{
@@ -204,13 +205,15 @@ export default {
 		width: 100%;
 	}
 	.footer{
+		padding: 10px;
+		height: 40px;
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
-		background-attachment: fixed;
+		position: fixed;
 		bottom:60px;
 		height: 30px;
 		background-color: #fff;
-		margin:30px auto 100px;
 	}
 	.sumCost{
 		color: red;
@@ -219,6 +222,6 @@ export default {
 	.sumitBtn{
 		background-color: red;
 		color: #fff;
-		padding: 10px;
+		padding: 10px 15px;
 	}
 </style>

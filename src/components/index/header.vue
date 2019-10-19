@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <header>
+        <header class="indexheader">
             <div v-bind:class="isShow?hidden:search" class="slide">
                 <el-row :gutter="0">
                     <el-col :span="4">
@@ -31,7 +31,7 @@
                 </el-row> 
             </div>
         </header>
-      <router-view/>        
+        <router-view/>        
     </div>
 </template>
 
@@ -74,7 +74,7 @@ export default {
         opacity: 0;
     }
 }
-header{
+.indexheader{
     position: fixed;
     max-width: 700px;
     width: 100%;
@@ -82,7 +82,7 @@ header{
     text-align: center;
     z-index: 10000;
     .search{
-        opacity: 0.8;
+        opacity: 0.5;
         background-color: black;
         height: 50px;
     }
@@ -92,16 +92,16 @@ header{
     }
     input{
         width: 100%;
-        height: 40px;
-        margin: 8px auto;
+        height: 30px;
+        margin: 15px auto 5px auto;
+        opacity: 1;
     }
     .visi{
         background-color: #fff;
         color: #333;
-        padding:10px 0;
+        padding:5px 0;
         height: 25px;
         a{
-            // font-size: 12px;
             color:#333;
             text-decoration: none;
             font-size: 15px;
@@ -113,8 +113,8 @@ header{
     .collect{
         position: relative;
         background-color:  black;
-        opacity: 0.8;
-        padding: 10px 0;
+        opacity: 0.5;
+        padding: 5px 0;
         height: 25px;
         .router-link-active{
             border-bottom: 2px solid #fff;

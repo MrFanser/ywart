@@ -112,14 +112,12 @@
 		  		    <router-link to="/">推荐</router-link><br>
 		  		    <router-link to="/index/latent">潜力收藏</router-link><br>
 		  		    <router-link to="/index/rudi">入门收藏</router-link><br>
-		  		    <router-link to="">名作收藏</router-link><br>
-		  		    <router-link to="">艺居生活</router-link><br>
+		  		    <router-link to="/index/recommend">名作收藏</router-link><br>
 		  		    <router-link to="">我的珍藏</router-link>
 		  		</el-collapse-item>
 		  		<el-collapse-item title="了解艺网" name="2">
 		  		    <router-link to="">关于我们</router-link><br>
-		  		    <router-link to="">工作机会</router-link><br>
-		  		    <router-link to="">网站地图</router-link>
+		  		    <router-link to="">工作机会</router-link>
 		  		</el-collapse-item>
 		  		<el-collapse-item title="支持与帮助" name="3">
 		  		    <router-link to="">如何购买</router-link><br>
@@ -127,7 +125,7 @@
 		  		    <router-link to="">联系我们</router-link>
 		  		</el-collapse-item>
 		  		<el-collapse-item title="合作" name="4">
-		  		    <router-link to="">作品征集</router-link>
+		  		    <router-link to="/index.collect">作品征集</router-link>
 		  		</el-collapse-item>
 	  		</el-collapse>
   		</div>
@@ -333,13 +331,18 @@ nav{
 }
 .induce{
 	margin-bottom: 50px;
+	margin-left:10px;
 	span{
 		font-size: 12px;
 		color:#777;
 	}
 }
+.links{
+	margin-left:10px;
+}
 .links a{
 	text-decoration: none;
 	color: #777;
+	
 }
 </style>

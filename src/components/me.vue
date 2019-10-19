@@ -1,8 +1,8 @@
 <template>
   <div class="MeWorld">
   	<header>
-  		<span class="UserName"><img src="/static/image/index/latent/art/gui.jpg" alt=""> <b></b></span>
-  		<span><router-link to="/index/setting"><img src="/static/image/me/1.png" alt=""></router-link></span>
+  		<span class="UserName"><img src="/static/image/index/latent/art/gui.jpg" alt=""></span>
+  		<span><router-link to="/index/setting"><img class="rig" src="/static/image/me/1.png" alt=""></router-link></span>
   	</header>
   	<section class="VIPCard">
   		<div class="card cardbg">
@@ -118,34 +118,37 @@ export default {
 		margin:0;
 		padding:0;
 	}
+	span{
+		font-size:12px;
+	}
+	.UnderCard img{
+		height: 35px;
+	}
 	.MeWorld{
 		max-width: 700px;
 		width: 100%;
-		// margin:auto;
 	}
 	.UserName img{
+		border-radius:50%;
 		vertical-align: middle;
-	}
-	.UserName b{
-		vertical-align: middle;
-		font-size: 30px;
 	}
 	header{
 		max-width: 700px;
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
-		margin:20px 0;
-		img:first-child{
-			width: 50px;
-			margin:auto 30px;
+		img{
+			position: absolute;
+			width: 30px;
+		}
+		.rig{
+			right: 0;
 		}
 	}
 	.VIPCard{
 		max-width: 700px;
-		width: 100%;
+		width: 95%;
 		margin:30px auto 40px auto;
-		// height: 55%;
 		box-shadow: 0px 0px 10px 2px #999;
 		border-radius: 5px;
 		text-align: center;
@@ -156,20 +159,21 @@ export default {
 	}
 	.cardbg{
 		background-image: url('/static/image/me/vipbg.png');
-		background-size: cover;
+		background-size: contain;
 		background-repeat: no-repeat;
 		color:#d1a46a;
 	}
 	.card{
+		margin-top:50px;
 		display: flex;
 		justify-content: space-between;
-		height: 200px;
-		line-height: 200px;
-		padding: 0 10px;
+		height: 120px;
+		line-height: 120px;
+		padding: 0 0px;
 	}
 	.card b{
 		font-weight: bolder;
-		font-size: 30px;
+		font-size: 20px;
 	}
 	.UnderCard{
 		max-width: 700px;
@@ -177,7 +181,7 @@ export default {
 		display: flex;
 		justify-content: space-around;
 		position: relative;
-		bottom:20px;
+		bottom:5px;
 	}
 	.other{
 		max-width: 700px;
@@ -190,13 +194,12 @@ export default {
 		}
 	}
 	.other div{
-		height: 130px;
+		height: 100px;
 		display: flex;
 		justify-content: space-around;
 		align-content: space-around;
 		flex-wrap: wrap;
 		align-items: center;
-		background-color: #eee;
 	}
 	.other div>span{
 		width: 120px;
@@ -205,6 +208,11 @@ export default {
 	}
 	.other div>span img{
 		margin:15px;
+		
+	}
+	.other img{
+		width: 30px;
+		height: 30px;
 	}
 	.hid{
 		visibility: hidden;
@@ -216,7 +224,6 @@ export default {
 		height: 90vh;
 		position: absolute;
 		bottom: 0px;
-		// left: 0;
 		z-index: 1;
 		background-color: #fff;
 	}

@@ -111,6 +111,10 @@ export default {
 </script>
 
 <style scroped lang='less'>
+*{
+	margin:0;
+	padding:0;
+}
 .el-drawer{
 	background-color: transparent;
 	box-shadow: none;

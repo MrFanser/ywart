@@ -53,7 +53,7 @@ export default {
 	.local{
 		max-width: 700px;
 		width:100%;
-		background: #eee;
+		/*background: #eee;*/
 	}
 	header{
 		display: flex;

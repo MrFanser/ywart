@@ -297,7 +297,7 @@ export default {
         margin:auto;
         max-width: 700px;
         width: 100%;
-        background-color: #eee;
+        /*background-color: #eee;*/
     }
     header{
         background-color: #fff;
